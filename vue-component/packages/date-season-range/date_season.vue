@@ -87,7 +87,6 @@ export default {
         rows() {
             const rows = this.tableRows;
             const disabledDate = this.disabledDate;
-            const selectedDate = [];
             const now = new Date().getMonth() + 1;
             for (let i = 0; i < 2; i++) {
                 const row = rows[i];
@@ -131,9 +130,6 @@ export default {
         }
     },
     methods: {
-        dateInSeason(year, season) {
-            return true;
-        },
         coerceTruthyValueToArray(val) {
             if (Array.isArray(val)) {
                 return val;
@@ -213,7 +209,7 @@ export default {
             var q = [1, 2, 3, 4];
             return q[Math.floor(d.getMonth() / 3)];
         },
-        handleMonthTableClick(i) {
+        handleMonthTableClick() {
             let target = event.target;
             if (target.tagName === 'A') {
                 target = target.parentNode.parentNode;

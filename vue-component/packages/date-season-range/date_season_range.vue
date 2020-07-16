@@ -68,7 +68,7 @@
  * @api: 组件外层 v-model 即可
  */
 import monthTable from './date_season';
-import Clickoutside from './click_outside';
+// import Clickoutside from './click_outside';
 const valueEquals = function(a, b) {
     // considers Date object and string
     const dateEquals = function(a, b) {
@@ -168,13 +168,17 @@ const displayText = {
     2: '7月-9月',
     3: '10月-12月'
 };
+
+import {Input as ElInput} from 'element-ui';
 export default {
+    name: 'SeasonRange',
     components: {
-        monthTable
+        monthTable,
+        ElInput
     },
-    directives: {
-        Clickoutside
-    },
+    // directives: {
+    //     Clickoutside
+    // },
     props: {
         defaultValue: {
             type: String // example: 2020-1
@@ -215,7 +219,7 @@ export default {
     },
     created() {},
     watch: {
-        defaultValue: function(val) {
+        defaultValue: function() {
             // if (!Array.isArray(this.value)) {
             //     const [left, right] = calcDefaultValue(val);
             //     this.leftDate = left;
@@ -335,7 +339,7 @@ export default {
             this.rangeState = val.rangeState;
         },
         handleRangePick(val, close = true) {
-            const defaultTime = this.defaultTime || [];
+            // const defaultTime = this.defaultTime || [];
             const minDate = val.minDate;
             const maxDate = val.maxDate;
             if (this.maxDate === maxDate && this.minDate === minDate) {
