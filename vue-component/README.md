@@ -1,24 +1,21 @@
 # date-season-range
 
-## Project setup
+## use step
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+first: npm install date-season-range
 ```
 
-### Compiles and minifies for production
+### require in you project
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+second: import DateSeasonRange from 'date-season-range'
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### use as a global componnet
+```
+Vue.use(DateSeasonRange)
+```
+
+### use in anywhere of your project
+```
+<date-season-range />
+```
