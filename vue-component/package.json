@@ -1,6 +1,6 @@
 {
   "name": "date-season-range",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "private": false,
   "license": "MIT",
   "author": "PiterYang",
@@ -53,5 +53,5 @@
     "url": "https://github.com/PiterYang/date_season_range.git"
   },
   "homepage": "https://github.com/PiterYang/date_season_range",
-  "main": "lib/date-season-range.common.js"
+  "main": "./lib/date-season-range.umd.min.js"
 }
