@@ -7,27 +7,12 @@ module.exports = {
     }
   },
   chainWebpack: config => {
-    // config.module
-    // .rule("vue")
-    // .include.add("/packages")
-    // .end()
-    // .use("vue-loader")
-    // .loader("babel-loader")
-    // .tap(options => {
-    //   return options;
-    // });
-    config.module
-      .rule("js")
-      .include.add("/packages")
-      .end()
-      .use("babel")
-      .loader("babel-loader")
-      .tap(options => {
-        return options;
-      });
+    config.module.rule("js");
+    config.module.rule("js").use("babel-loader");
+    config.module.rule("js").use("cache-loader");
     config.externals({
       //   vue: "Vue"
-      //   "element-ui": "ELEMENT"
+      "element-ui": "ELEMENT"
     });
     config.module.rules.delete("eslint");
   },
