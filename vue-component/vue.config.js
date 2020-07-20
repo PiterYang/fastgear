@@ -12,7 +12,7 @@ module.exports = {
     config.module.rule("js").use("cache-loader");
     config.externals({
       //   vue: "Vue"
-      "element-ui": "ELEMENT"
+      "element-ui": "element-ui"
     });
     config.module.rules.delete("eslint");
   },

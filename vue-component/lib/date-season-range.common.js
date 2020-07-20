@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("ELEMENT"));
+		module.exports = factory(require("element-ui"));
 	else if(typeof define === 'function' && define.amd)
-		define(["ELEMENT"], factory);
+		define(["element-ui"], factory);
 	else if(typeof exports === 'object')
-		exports["date-season-range"] = factory(require("ELEMENT"));
+		exports["date-season-range"] = factory(require("element-ui"));
 	else
-		root["date-season-range"] = factory(root["ELEMENT"]);
+		root["date-season-range"] = factory(root["element-ui"]);
 })((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__5f72__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -2897,7 +2897,7 @@ var es_array_map = __webpack_require__("d81d");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
 var es_function_name = __webpack_require__("b0c0");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d21feda-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season_range.vue?vue&type=template&id=3368e510&scoped=true&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e9a15f16-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season_range.vue?vue&type=template&id=3368e510&scoped=true&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"clickoutside",rawName:"v-clickoutside",value:(_vm.handleClose),expression:"handleClose"}],staticStyle:{"position":"relative"}},[_c('el-input',{ref:"reference",staticClass:"el-date-editor",style:(_vm.inputStyle),attrs:{"placeholder":_vm.placeholder,"value":_vm.displayValue,"validateEvent":false,"readonly":true},on:{"focus":_vm.handleFocus,"input":function (value) { return _vm.userInput = value; },"change":_vm.handleChange,"pick":_vm.pick}}),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"el-picker-panel el-date-range-picker el-popper"},[_c('div',{staticClass:"el-picker-panel__body"},[_c('div',{staticClass:"el-picker-panel__content el-date-range-picker__content is-left"},[_c('div',{staticClass:"el-date-range-picker__header"},[_c('button',{staticClass:"el-picker-panel__icon-btn el-icon-d-arrow-left",attrs:{"type":"button"},on:{"click":_vm.leftPrevYear}}),_c('div',[_vm._v(_vm._s(_vm.leftLabel))])]),_c('month-table',{attrs:{"selection-mode":"range","date":_vm.leftDate,"default-value":_vm.defaultValue,"min-date":_vm.minDate,"max-date":_vm.maxDate,"range-state":_vm.rangeState},on:{"changerange":_vm.handleChangeRange,"pick":_vm.handleRangePick}})],1),_c('div',{staticClass:"el-picker-panel__content el-date-range-picker__content is-right"},[_c('div',{staticClass:"el-date-range-picker__header"},[_c('button',{staticClass:"el-picker-panel__icon-btn el-icon-d-arrow-right",attrs:{"type":"button"},on:{"click":_vm.rightNextYear}}),_c('div',[_vm._v(_vm._s(_vm.rightLabel))])]),_c('month-table',{attrs:{"selection-mode":"range","date":_vm.rightDate,"default-value":_vm.defaultValue,"min-date":_vm.minDate,"max-date":_vm.maxDate,"range-state":_vm.rangeState},on:{"changerange":_vm.handleChangeRange,"pick":_vm.handleRangePick}})],1)])])],1)}
 var staticRenderFns = []
 
@@ -2910,7 +2910,7 @@ var es_array_concat = __webpack_require__("99af");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.every.js
 var es_array_every = __webpack_require__("a623");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"5d21feda-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season.vue?vue&type=template&id=ba781036&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e9a15f16-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season.vue?vue&type=template&id=ba781036&
 var date_seasonvue_type_template_id_ba781036_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',{staticClass:"el-month-table",on:{"click":_vm.handleMonthTableClick,"mousemove":_vm.handleMouseMove}},[_c('tbody',_vm._l((_vm.rows),function(row,key){return _c('tr',{key:key},_vm._l((row),function(cell,key){return _c('td',{key:key,class:_vm.getCellStyle(cell)},[_c('div',[_c('a',{staticClass:"cell"},[_vm._v(_vm._s(cell.text))])])])}),0)}),0)])}
 var date_seasonvue_type_template_id_ba781036_staticRenderFns = []
 
@@ -3375,8 +3375,8 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var date_season = (component.exports);
-// EXTERNAL MODULE: external "ELEMENT"
-var external_ELEMENT_ = __webpack_require__("5f72");
+// EXTERNAL MODULE: external "element-ui"
+var external_element_ui_ = __webpack_require__("5f72");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season_range.vue?vue&type=script&lang=js&
 
@@ -3565,7 +3565,7 @@ var date_season_rangevue_type_script_lang_js_displayText = {
   name: 'SeasonRange',
   components: {
     monthTable: date_season,
-    ElInput: external_ELEMENT_["Input"]
+    ElInput: external_element_ui_["Input"]
   },
   // directives: {
   //     Clickoutside
