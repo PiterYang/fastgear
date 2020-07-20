@@ -7,6 +7,15 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    // config.module
+    // .rule("vue")
+    // .include.add("/packages")
+    // .end()
+    // .use("vue-loader")
+    // .loader("babel-loader")
+    // .tap(options => {
+    //   return options;
+    // });
     config.module
       .rule("js")
       .include.add("/packages")
@@ -28,7 +37,8 @@ module.exports = {
   },
   configureWebpack: {
     output: {
-      libraryExport: "default"
+      libraryExport: "default",
+      libraryTarget: "umd"
     }
   }
 

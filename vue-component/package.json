@@ -1,6 +1,6 @@
 {
   "name": "date-season-range",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "license": "MIT",
   "author": "PiterYang",
@@ -13,10 +13,12 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
-    "vue": "^2.6.11"
+    "hzsj-components": "^0.6.1",
+    "vue": "^2.6.11",
+    "vue-marquee-ho": "^1.2.1"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "~4.4.0",
+    "@vue/cli-plugin-babel": "^4.4.6",
     "@vue/cli-plugin-eslint": "~4.4.0",
     "@vue/cli-service": "~4.4.0",
     "babel-eslint": "^10.1.0",
@@ -53,5 +55,5 @@
     "url": "https://github.com/PiterYang/date_season_range.git"
   },
   "homepage": "https://github.com/PiterYang/date_season_range",
-  "main": "./lib/date-season-range.umd.min.js"
+  "main": "./lib/date-season-range.umd.js"
 }
