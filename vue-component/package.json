@@ -2,7 +2,6 @@
   "name": "date-season-range",
   "version": "0.1.5",
   "private": false,
-  "license": "MIT",
   "author": "PiterYang",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -10,6 +9,7 @@
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name date-season-range --dest lib ./packages/index.js"
   },
+  "main": "./lib/date-season-range.umd.js",
   "dependencies": {
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
@@ -46,14 +46,14 @@
     "last 2 versions",
     "not dead"
   ],
+  "homepage": "https://github.com/PiterYang/date_season_range",
   "keywords": [
     "vue",
     "element-ui"
   ],
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/PiterYang/date_season_range.git"
-  },
-  "homepage": "https://github.com/PiterYang/date_season_range",
-  "main": "./lib/date-season-range.umd.js"
+  }
 }
