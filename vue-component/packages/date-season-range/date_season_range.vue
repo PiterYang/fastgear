@@ -13,7 +13,11 @@
             ref="reference"
             :style="inputStyle"
         ></el-input>
-        <div v-show="visible" class="el-picker-panel el-date-range-picker el-popper">
+        <div
+            v-show="visible"
+            class="el-picker-panel el-date-range-picker el-popper"
+            style="positon: absolute;"
+        >
             <div class="el-picker-panel__body">
                 <div class="el-picker-panel__content el-date-range-picker__content is-left">
                     <div class="el-date-range-picker__header">
@@ -168,7 +172,6 @@ const displayText = {
     2: '7月-9月',
     3: '10月-12月'
 };
-
 import {Input as ElInput} from 'element-ui';
 export default {
     name: 'SeasonRange',
@@ -214,7 +217,8 @@ export default {
             leftDate: new Date(),
             rightDate: nextYear(new Date()),
             pickerVisible: false,
-            displayValue: ''
+            displayValue: '',
+            unlinkPanels: false
         };
     },
     created() {},
@@ -348,7 +352,6 @@ export default {
             this.onPick && this.onPick(val);
             this.maxDate = maxDate;
             this.minDate = minDate;
-
             setTimeout(() => {
                 this.maxDate = maxDate;
                 this.minDate = minDate;
@@ -366,14 +369,14 @@ export default {
             if (!this.unlinkPanels) {
                 this.rightDate = prevYear(this.rightDate);
             }
-            this.resetView();
+            // this.resetView();
         },
         rightNextYear() {
             if (!this.unlinkPanels) {
                 this.leftDate = nextYear(this.leftDate);
             }
             this.rightDate = nextYear(this.rightDate);
-            this.resetView();
+            // this.resetView();
         },
         handleMouseEnter() {},
         pick(date = '', visible = false) {
@@ -385,11 +388,11 @@ export default {
         resetView() {
             this.minDate =
                 this.value && isDate(this.value[0])
-                    ? this.seasonFirstMonthDate(this.value[0])
+                    ? this.seasonFirstMonthDate(new Date(this.value[0]))
                     : null;
             this.maxDate =
                 this.value && isDate(this.value[0])
-                    ? this.seasonFirstMonthDate(this.value[1])
+                    ? this.seasonFirstMonthDate(new Date(this.value[1]))
                     : null;
         },
         isValidValue(value) {

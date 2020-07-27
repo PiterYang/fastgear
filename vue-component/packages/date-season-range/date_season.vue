@@ -30,6 +30,19 @@ const getMonthTimestamp = function(time) {
         return NaN;
     }
 };
+export const arrayFindIndex = function(arr, pred) {
+    for (let i = 0; i !== arr.length; ++i) {
+        if (pred(arr[i])) {
+            return i;
+        }
+    }
+    return -1;
+};
+
+export const arrayFind = function(arr, pred) {
+    const idx = arrayFindIndex(arr, pred);
+    return idx !== -1 ? arr[idx] : undefined;
+};
 const displayText = {
     0: '1月-3月',
     1: '4月-6月',
@@ -72,13 +85,13 @@ export default {
         },
 
         minDate(newVal, oldVal) {
-            if (newVal !== oldVal) {
+            if (getMonthTimestamp(newVal) !== getMonthTimestamp(oldVal)) {
                 this.markRange(this.minDate, this.maxDate);
             }
         },
 
         maxDate(newVal, oldVal) {
-            if (newVal !== oldVal) {
+            if (getMonthTimestamp(newVal) !== getMonthTimestamp(oldVal)) {
                 this.markRange(this.minDate, this.maxDate);
             }
         }
@@ -87,7 +100,8 @@ export default {
         rows() {
             const rows = this.tableRows;
             const disabledDate = this.disabledDate;
-            const now = new Date().getMonth() + 1;
+            const selectedDate = [];
+            const now = getMonthTimestamp(new Date());
             for (let i = 0; i < 2; i++) {
                 const row = rows[i];
                 for (let j = 0; j < 2; j++) {
@@ -106,10 +120,13 @@ export default {
                     cell.type = 'normal';
 
                     const index = i * 2 + j;
-                    const time = this.date;
-                    cell.inRange = time >= this.minDate && time <= this.maxDate;
-                    cell.start = this.minDate && time === this.minDate;
-                    cell.end = this.maxDate && time === this.maxDate;
+                    const time = new Date(this.date.getFullYear(), index * 3).getTime();
+                    cell.inRange =
+                        time >= getMonthTimestamp(this.minDate) &&
+                        time <= getMonthTimestamp(this.maxDate);
+
+                    cell.start = this.minDate && time === getMonthTimestamp(this.minDate);
+                    cell.end = this.maxDate && time === getMonthTimestamp(this.maxDate);
                     const isToday = time === now;
 
                     if (isToday) {
@@ -118,10 +135,10 @@ export default {
                     cell.text = displayText[index];
                     let cellDate = time;
                     cell.disabled = typeof disabledDate === 'function' && disabledDate(cellDate);
-                    // cell.selected = arrayFind(
-                    //     selectedDate,
-                    //     date => date.getTime() === cellDate.getTime()
-                    // );
+                    cell.selected = arrayFind(
+                        selectedDate,
+                        date => date.getTime() === cellDate.getTime()
+                    );
 
                     this.$set(row, j, cell);
                 }
