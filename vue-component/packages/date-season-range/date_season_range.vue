@@ -172,12 +172,10 @@ const displayText = {
     2: '7月-9月',
     3: '10月-12月'
 };
-import {Input as ElInput} from 'element-ui';
 export default {
     name: 'SeasonRange',
     components: {
-        monthTable,
-        ElInput
+        monthTable
     },
     // directives: {
     //     Clickoutside

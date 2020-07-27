@@ -1,7 +1,7 @@
 import Vue from "vue";
 import App from "./App.vue";
-import { Input } from "element-ui";
-Vue.use(Input, { size: "small" });
+import ElementUI from "element-ui";
+Vue.use(ElementUI, { size: "small" });
 import "element-ui/lib/theme-chalk/index.css";
 const directiveFiles = require.context("./directives", false, /.+\.js$/);
 directiveFiles.keys().forEach(fileName => {

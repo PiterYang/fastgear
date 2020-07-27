@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("element-ui"));
+		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define(["element-ui"], factory);
+		define([], factory);
 	else if(typeof exports === 'object')
-		exports["date-season-range"] = factory(require("element-ui"));
+		exports["date-season-range"] = factory();
 	else
-		root["date-season-range"] = factory(root["element-ui"]);
-})((typeof self !== 'undefined' ? self : this), function(__WEBPACK_EXTERNAL_MODULE__5f72__) {
+		root["date-season-range"] = factory();
+})((typeof self !== 'undefined' ? self : this), function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1087,17 +1087,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "4f70":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_3368e510_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("8936");
-/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_3368e510_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_3368e510_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
- /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_3368e510_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
 /***/ "50c4":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1218,13 +1207,6 @@ module.exports = function (bitmap, value) {
   };
 };
 
-
-/***/ }),
-
-/***/ "5f72":
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE__5f72__;
 
 /***/ }),
 
@@ -1395,6 +1377,17 @@ var TEMPLATE = String(String).split('String');
   return typeof this == 'function' && getInternalState(this).source || inspectSource(this);
 });
 
+
+/***/ }),
+
+/***/ "6f37":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_fd9e53f8_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("f3f2");
+/* harmony import */ var _node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_fd9e53f8_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_fd9e53f8_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+ /* unused harmony default export */ var _unused_webpack_default_export = (_node_modules_vue_style_loader_index_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_3_node_modules_less_loader_dist_cjs_js_ref_10_oneOf_1_4_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_lib_index_js_vue_loader_options_date_season_range_vue_vue_type_style_index_0_id_fd9e53f8_lang_less_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
@@ -1718,21 +1711,6 @@ module.exports = store.inspectSource;
 
 /***/ }),
 
-/***/ "8936":
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__("90df");
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var add = __webpack_require__("499e").default
-var update = add("55a0d3ce", content, true, {"sourceMap":false,"shadowMode":false});
-
-/***/ }),
-
 /***/ "8aa5":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1745,20 +1723,6 @@ var charAt = __webpack_require__("6547").charAt;
 module.exports = function (S, index, unicode) {
   return index + (unicode ? charAt(S, index).length : 1);
 };
-
-
-/***/ }),
-
-/***/ "90df":
-/***/ (function(module, exports, __webpack_require__) {
-
-// Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
-exports = ___CSS_LOADER_API_IMPORT___(false);
-// Module
-exports.push([module.i, ".no-hover[data-v-3368e510]:hover{color:#606266!important}.hoverBtn[data-v-3368e510]:hover{color:#fff!important;background:#409eff}.active[data-v-3368e510]{color:#fff!important;background:#409eff!important}", ""]);
-// Exports
-module.exports = exports;
 
 
 /***/ }),
@@ -2007,6 +1971,20 @@ exports.f = DESCRIPTORS ? nativeDefineProperty : function defineProperty(O, P, A
   if ('value' in Attributes) O[P] = Attributes.value;
   return O;
 };
+
+
+/***/ }),
+
+/***/ "9e4b":
+/***/ (function(module, exports, __webpack_require__) {
+
+// Imports
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
+exports = ___CSS_LOADER_API_IMPORT___(false);
+// Module
+exports.push([module.i, ".no-hover[data-v-fd9e53f8]:hover{color:#606266!important}.hoverBtn[data-v-fd9e53f8]:hover{color:#fff!important;background:#409eff}.active[data-v-fd9e53f8]{color:#fff!important;background:#409eff!important}", ""]);
+// Exports
+module.exports = exports;
 
 
 /***/ }),
@@ -2845,6 +2823,21 @@ module.exports = Array.isArray || function isArray(arg) {
 
 /***/ }),
 
+/***/ "f3f2":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("9e4b");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var add = __webpack_require__("499e").default
+var update = add("486e6a3c", content, true, {"sourceMap":false,"shadowMode":false});
+
+/***/ }),
+
 /***/ "f772":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2897,12 +2890,12 @@ var es_array_map = __webpack_require__("d81d");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.function.name.js
 var es_function_name = __webpack_require__("b0c0");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e9a15f16-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season_range.vue?vue&type=template&id=3368e510&scoped=true&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"clickoutside",rawName:"v-clickoutside",value:(_vm.handleClose),expression:"handleClose"}],staticStyle:{"position":"relative"}},[_c('el-input',{ref:"reference",staticClass:"el-date-editor",style:(_vm.inputStyle),attrs:{"placeholder":_vm.placeholder,"value":_vm.displayValue,"validateEvent":false,"readonly":true},on:{"focus":_vm.handleFocus,"input":function (value) { return _vm.userInput = value; },"change":_vm.handleChange,"pick":_vm.pick}}),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"el-picker-panel el-date-range-picker el-popper"},[_c('div',{staticClass:"el-picker-panel__body"},[_c('div',{staticClass:"el-picker-panel__content el-date-range-picker__content is-left"},[_c('div',{staticClass:"el-date-range-picker__header"},[_c('button',{staticClass:"el-picker-panel__icon-btn el-icon-d-arrow-left",attrs:{"type":"button"},on:{"click":_vm.leftPrevYear}}),_c('div',[_vm._v(_vm._s(_vm.leftLabel))])]),_c('month-table',{attrs:{"selection-mode":"range","date":_vm.leftDate,"default-value":_vm.defaultValue,"min-date":_vm.minDate,"max-date":_vm.maxDate,"range-state":_vm.rangeState},on:{"changerange":_vm.handleChangeRange,"pick":_vm.handleRangePick}})],1),_c('div',{staticClass:"el-picker-panel__content el-date-range-picker__content is-right"},[_c('div',{staticClass:"el-date-range-picker__header"},[_c('button',{staticClass:"el-picker-panel__icon-btn el-icon-d-arrow-right",attrs:{"type":"button"},on:{"click":_vm.rightNextYear}}),_c('div',[_vm._v(_vm._s(_vm.rightLabel))])]),_c('month-table',{attrs:{"selection-mode":"range","date":_vm.rightDate,"default-value":_vm.defaultValue,"min-date":_vm.minDate,"max-date":_vm.maxDate,"range-state":_vm.rangeState},on:{"changerange":_vm.handleChangeRange,"pick":_vm.handleRangePick}})],1)])])],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e9a15f16-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season_range.vue?vue&type=template&id=fd9e53f8&scoped=true&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{directives:[{name:"clickoutside",rawName:"v-clickoutside",value:(_vm.handleClose),expression:"handleClose"}],staticStyle:{"position":"relative"}},[_c('el-input',{ref:"reference",staticClass:"el-date-editor",style:(_vm.inputStyle),attrs:{"placeholder":_vm.placeholder,"value":_vm.displayValue,"validateEvent":false,"readonly":true},on:{"focus":_vm.handleFocus,"input":function (value) { return _vm.userInput = value; },"change":_vm.handleChange,"pick":_vm.pick}}),_c('div',{directives:[{name:"show",rawName:"v-show",value:(_vm.visible),expression:"visible"}],staticClass:"el-picker-panel el-date-range-picker el-popper",staticStyle:{"positon":"absolute"}},[_c('div',{staticClass:"el-picker-panel__body"},[_c('div',{staticClass:"el-picker-panel__content el-date-range-picker__content is-left"},[_c('div',{staticClass:"el-date-range-picker__header"},[_c('button',{staticClass:"el-picker-panel__icon-btn el-icon-d-arrow-left",attrs:{"type":"button"},on:{"click":_vm.leftPrevYear}}),_c('div',[_vm._v(_vm._s(_vm.leftLabel))])]),_c('month-table',{attrs:{"selection-mode":"range","date":_vm.leftDate,"default-value":_vm.defaultValue,"min-date":_vm.minDate,"max-date":_vm.maxDate,"range-state":_vm.rangeState},on:{"changerange":_vm.handleChangeRange,"pick":_vm.handleRangePick}})],1),_c('div',{staticClass:"el-picker-panel__content el-date-range-picker__content is-right"},[_c('div',{staticClass:"el-date-range-picker__header"},[_c('button',{staticClass:"el-picker-panel__icon-btn el-icon-d-arrow-right",attrs:{"type":"button"},on:{"click":_vm.rightNextYear}}),_c('div',[_vm._v(_vm._s(_vm.rightLabel))])]),_c('month-table',{attrs:{"selection-mode":"range","date":_vm.rightDate,"default-value":_vm.defaultValue,"min-date":_vm.minDate,"max-date":_vm.maxDate,"range-state":_vm.rangeState},on:{"changerange":_vm.handleChangeRange,"pick":_vm.handleRangePick}})],1)])])],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/date-season-range/date_season_range.vue?vue&type=template&id=3368e510&scoped=true&
+// CONCATENATED MODULE: ./packages/date-season-range/date_season_range.vue?vue&type=template&id=fd9e53f8&scoped=true&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
 var es_array_concat = __webpack_require__("99af");
@@ -2910,12 +2903,12 @@ var es_array_concat = __webpack_require__("99af");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.every.js
 var es_array_every = __webpack_require__("a623");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e9a15f16-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season.vue?vue&type=template&id=ba781036&
-var date_seasonvue_type_template_id_ba781036_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',{staticClass:"el-month-table",on:{"click":_vm.handleMonthTableClick,"mousemove":_vm.handleMouseMove}},[_c('tbody',_vm._l((_vm.rows),function(row,key){return _c('tr',{key:key},_vm._l((row),function(cell,key){return _c('td',{key:key,class:_vm.getCellStyle(cell)},[_c('div',[_c('a',{staticClass:"cell"},[_vm._v(_vm._s(cell.text))])])])}),0)}),0)])}
-var date_seasonvue_type_template_id_ba781036_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"e9a15f16-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season.vue?vue&type=template&id=46f6bb35&
+var date_seasonvue_type_template_id_46f6bb35_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('table',{staticClass:"el-month-table",on:{"click":_vm.handleMonthTableClick,"mousemove":_vm.handleMouseMove}},[_c('tbody',_vm._l((_vm.rows),function(row,key){return _c('tr',{key:key},_vm._l((row),function(cell,key){return _c('td',{key:key,class:_vm.getCellStyle(cell)},[_c('div',[_c('a',{staticClass:"cell"},[_vm._v(_vm._s(cell.text))])])])}),0)}),0)])}
+var date_seasonvue_type_template_id_46f6bb35_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/date-season-range/date_season.vue?vue&type=template&id=ba781036&
+// CONCATENATED MODULE: ./packages/date-season-range/date_season.vue?vue&type=template&id=46f6bb35&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.slice.js
 var es_array_slice = __webpack_require__("fb6a");
@@ -2974,6 +2967,19 @@ var getMonthTimestamp = function getMonthTimestamp(time) {
   }
 };
 
+var arrayFindIndex = function arrayFindIndex(arr, pred) {
+  for (var i = 0; i !== arr.length; ++i) {
+    if (pred(arr[i])) {
+      return i;
+    }
+  }
+
+  return -1;
+};
+var arrayFind = function arrayFind(arr, pred) {
+  var idx = arrayFindIndex(arr, pred);
+  return idx !== -1 ? arr[idx] : undefined;
+};
 var displayText = {
   0: '1月-3月',
   1: '4月-6月',
@@ -3015,26 +3021,29 @@ var displayText = {
       this.markRange(this.minDate, newVal);
     },
     minDate: function minDate(newVal, oldVal) {
-      if (newVal !== oldVal) {
+      if (getMonthTimestamp(newVal) !== getMonthTimestamp(oldVal)) {
         this.markRange(this.minDate, this.maxDate);
       }
     },
     maxDate: function maxDate(newVal, oldVal) {
-      if (newVal !== oldVal) {
+      if (getMonthTimestamp(newVal) !== getMonthTimestamp(oldVal)) {
         this.markRange(this.minDate, this.maxDate);
       }
     }
   },
   computed: {
     rows: function rows() {
+      var _this = this;
+
       var rows = this.tableRows;
       var disabledDate = this.disabledDate;
-      var now = new Date().getMonth() + 1;
+      var selectedDate = [];
+      var now = getMonthTimestamp(new Date());
 
       for (var i = 0; i < 2; i++) {
         var row = rows[i];
 
-        for (var j = 0; j < 2; j++) {
+        var _loop = function _loop(j) {
           var cell = row[j];
 
           if (!cell) {
@@ -3050,10 +3059,10 @@ var displayText = {
 
           cell.type = 'normal';
           var index = i * 2 + j;
-          var time = this.date;
-          cell.inRange = time >= this.minDate && time <= this.maxDate;
-          cell.start = this.minDate && time === this.minDate;
-          cell.end = this.maxDate && time === this.maxDate;
+          var time = new Date(_this.date.getFullYear(), index * 3).getTime();
+          cell.inRange = time >= getMonthTimestamp(_this.minDate) && time <= getMonthTimestamp(_this.maxDate);
+          cell.start = _this.minDate && time === getMonthTimestamp(_this.minDate);
+          cell.end = _this.maxDate && time === getMonthTimestamp(_this.maxDate);
           var isToday = time === now;
 
           if (isToday) {
@@ -3062,12 +3071,16 @@ var displayText = {
 
           cell.text = displayText[index];
           var cellDate = time;
-          cell.disabled = typeof disabledDate === 'function' && disabledDate(cellDate); // cell.selected = arrayFind(
-          //     selectedDate,
-          //     date => date.getTime() === cellDate.getTime()
-          // );
+          cell.disabled = typeof disabledDate === 'function' && disabledDate(cellDate);
+          cell.selected = arrayFind(selectedDate, function (date) {
+            return date.getTime() === cellDate.getTime();
+          });
 
-          this.$set(row, j, cell);
+          _this.$set(row, j, cell);
+        };
+
+        for (var j = 0; j < 2; j++) {
+          _loop(j);
         }
       }
 
@@ -3103,7 +3116,7 @@ var displayText = {
       return this.date.getFullYear() === value.getFullYear() && Number(cell) === this.getQuarter(value);
     },
     getCellStyle: function getCellStyle(cell) {
-      var _this = this;
+      var _this2 = this;
 
       var style = {};
       var year = this.date.getFullYear();
@@ -3112,11 +3125,11 @@ var displayText = {
       var defaultValue = this.defaultValue ? Array.isArray(this.defaultValue) ? this.defaultValue : [this.defaultValue] : [];
       style.disabled = typeof this.disabledDate === 'function' ? this.datesInSeason(year, season).every(this.disabledDate) : false;
       style.current = this.arrayFindIndex(this.coerceTruthyValueToArray(this.value), function (date) {
-        return date.getFullYear() === year && _this.getQuarter(date) === season;
+        return date.getFullYear() === year && _this2.getQuarter(date) === season;
       }) >= 0;
       style.today = today.getFullYear() === year && this.getQuarter(today) === season + 1;
       style.default = defaultValue.some(function (date) {
-        return _this.cellMatchesDate(cell, date);
+        return _this2.cellMatchesDate(cell, date);
       });
 
       if (cell.inRange) {
@@ -3365,8 +3378,8 @@ function normalizeComponent (
 
 var component = normalizeComponent(
   date_season_range_date_seasonvue_type_script_lang_js_,
-  date_seasonvue_type_template_id_ba781036_render,
-  date_seasonvue_type_template_id_ba781036_staticRenderFns,
+  date_seasonvue_type_template_id_46f6bb35_render,
+  date_seasonvue_type_template_id_46f6bb35_staticRenderFns,
   false,
   null,
   null,
@@ -3375,12 +3388,13 @@ var component = normalizeComponent(
 )
 
 /* harmony default export */ var date_season = (component.exports);
-// EXTERNAL MODULE: external "element-ui"
-var external_element_ui_ = __webpack_require__("5f72");
-
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/date-season-range/date_season_range.vue?vue&type=script&lang=js&
 
 
+//
+//
+//
+//
 //
 //
 //
@@ -3560,12 +3574,10 @@ var date_season_rangevue_type_script_lang_js_displayText = {
   2: '7月-9月',
   3: '10月-12月'
 };
-
 /* harmony default export */ var date_season_rangevue_type_script_lang_js_ = ({
   name: 'SeasonRange',
   components: {
-    monthTable: date_season,
-    ElInput: external_element_ui_["Input"]
+    monthTable: date_season
   },
   // directives: {
   //     Clickoutside
@@ -3621,7 +3633,8 @@ var date_season_rangevue_type_script_lang_js_displayText = {
       leftDate: new Date(),
       rightDate: nextYear(new Date()),
       pickerVisible: false,
-      displayValue: ''
+      displayValue: '',
+      unlinkPanels: false
     };
   },
   created: function created() {},
@@ -3778,17 +3791,15 @@ var date_season_rangevue_type_script_lang_js_displayText = {
 
       if (!this.unlinkPanels) {
         this.rightDate = prevYear(this.rightDate);
-      }
+      } // this.resetView();
 
-      this.resetView();
     },
     rightNextYear: function rightNextYear() {
       if (!this.unlinkPanels) {
         this.leftDate = nextYear(this.leftDate);
       }
 
-      this.rightDate = nextYear(this.rightDate);
-      this.resetView();
+      this.rightDate = nextYear(this.rightDate); // this.resetView();
     },
     handleMouseEnter: function handleMouseEnter() {},
     pick: function pick() {
@@ -3800,8 +3811,8 @@ var date_season_rangevue_type_script_lang_js_displayText = {
       this.resetView && this.resetView();
     },
     resetView: function resetView() {
-      this.minDate = this.value && isDate(this.value[0]) ? this.seasonFirstMonthDate(this.value[0]) : null;
-      this.maxDate = this.value && isDate(this.value[0]) ? this.seasonFirstMonthDate(this.value[1]) : null;
+      this.minDate = this.value && isDate(this.value[0]) ? this.seasonFirstMonthDate(new Date(this.value[0])) : null;
+      this.maxDate = this.value && isDate(this.value[0]) ? this.seasonFirstMonthDate(new Date(this.value[1])) : null;
     },
     isValidValue: function isValidValue(value) {
       return Array.isArray(value) && value && value[0] && value[1] && isDate(value[0]) && isDate(value[1]) && value[0].getTime() <= value[1].getTime();
@@ -3830,8 +3841,8 @@ var date_season_rangevue_type_script_lang_js_displayText = {
 });
 // CONCATENATED MODULE: ./packages/date-season-range/date_season_range.vue?vue&type=script&lang=js&
  /* harmony default export */ var date_season_range_date_season_rangevue_type_script_lang_js_ = (date_season_rangevue_type_script_lang_js_); 
-// EXTERNAL MODULE: ./packages/date-season-range/date_season_range.vue?vue&type=style&index=0&id=3368e510&lang=less&scoped=true&
-var date_season_rangevue_type_style_index_0_id_3368e510_lang_less_scoped_true_ = __webpack_require__("4f70");
+// EXTERNAL MODULE: ./packages/date-season-range/date_season_range.vue?vue&type=style&index=0&id=fd9e53f8&lang=less&scoped=true&
+var date_season_rangevue_type_style_index_0_id_fd9e53f8_lang_less_scoped_true_ = __webpack_require__("6f37");
 
 // CONCATENATED MODULE: ./packages/date-season-range/date_season_range.vue
 
@@ -3848,7 +3859,7 @@ var date_season_range_component = normalizeComponent(
   staticRenderFns,
   false,
   null,
-  "3368e510",
+  "fd9e53f8",
   null
   
 )
