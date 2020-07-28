@@ -5,6 +5,14 @@
 ```
 <season-select v-model="value2" inputStyle="width: 300px;" style="width:300px" />
 
+<script>
+  export default {
+    return data(){
+      value2: [new Date(), new Date()]
+    }
+  }
+</script>
+
 v-model绑定的值：和 element-ui 中的 el-date-picker 一致
 
 inputStyle：用来设置组件中显示选中季度的 input 样式
