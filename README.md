@@ -3,7 +3,30 @@
 ### 使用：
 
 ```
+##### npm 安装
+
+npm i date-season-range
+```
+
+```
+
+import VueComponent from 'date-season-range'
+const seasonSelect = VueComponent.SeasonRange
+
 <season-select v-model="value2" inputStyle="width: 300px;" style="width:300px" />
+
+<script>
+  export default {
+    data(){
+      return{
+          value2: [new Date(), new Date()]
+      }
+    },
+    components: {
+        seasonSelect
+    },
+  }
+</script>
 
 v-model绑定的值：和 element-ui 中的 el-date-picker 一致
 
