@@ -3,13 +3,21 @@
 ### 使用：
 
 ```
+import VueComponent from 'date-season-range'
+const seasonSelect = VueComponent.SeasonRange
+
 <season-select v-model="value2" inputStyle="width: 300px;" style="width:300px" />
 
 <script>
   export default {
-    return data(){
-      value2: [new Date(), new Date()]
-    }
+    data(){
+      return{
+          value2: [new Date(), new Date()]
+      }
+    },
+    components: {
+        seasonSelect
+    },
   }
 </script>
 
