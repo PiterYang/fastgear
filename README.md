@@ -3,6 +3,13 @@
 ### 使用：
 
 ```
+##### npm 安装
+
+npm i date-season-range
+```
+
+```
+
 import VueComponent from 'date-season-range'
 const seasonSelect = VueComponent.SeasonRange
 
