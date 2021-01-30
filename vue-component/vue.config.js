@@ -10,10 +10,10 @@ module.exports = {
     config.module.rule("js");
     config.module.rule("js").use("babel-loader");
     config.module.rule("js").use("cache-loader");
-    config.externals({
-      //   vue: "Vue"
-      "element-ui": "element-ui"
-    });
+    // config.externals({
+    //   //   vue: "Vue"
+    //   "element-ui": "element-ui"
+    // });
     config.module.rules.delete("eslint");
   },
   productionSourceMap: false,

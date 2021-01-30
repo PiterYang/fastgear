@@ -173,7 +173,7 @@ const displayText = {
     3: '10月-12月'
 };
 export default {
-    name: 'SeasonRange',
+    name: 'FgSeasonRange',
     components: {
         monthTable
     },

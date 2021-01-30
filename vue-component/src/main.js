@@ -1,7 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
 import ElementUI from "element-ui";
+import FastgearUI from "../packages";
+import "./assets/less/common.less";
 Vue.use(ElementUI, { size: "small" });
+Vue.use(FastgearUI);
+import router from "./router";
 import "element-ui/lib/theme-chalk/index.css";
 const directiveFiles = require.context("./directives", false, /.+\.js$/);
 directiveFiles.keys().forEach(fileName => {
@@ -17,5 +21,6 @@ directiveFiles.keys().forEach(fileName => {
 });
 Vue.config.productionTip = false;
 new Vue({
+  router,
   render: h => h(App)
 }).$mount("#app");

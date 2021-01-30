@@ -12,7 +12,8 @@
   },
   "main": "./lib/date-season-range.umd.min.js",
   "dependencies": {
-    "core-js": "^2.6.11"
+    "core-js": "^2.6.11",
+    "vue-router": "^3.5.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
