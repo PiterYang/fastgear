@@ -1,0 +1,34 @@
+.tribute-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  max-height: 440px;
+  max-width: 550px;
+  overflow: auto;
+  display: block;
+  z-index: 100;
+}
+.tribute-container ul.select {
+  margin: 0;
+  margin-top: 2px;
+  padding: 0;
+  list-style: none;
+  background: #efefef;
+}
+.tribute-container ul.select li {
+  padding: 5px 5px;
+  cursor: pointer;
+}
+.tribute-container ul.select li.highlight {
+  background: #ddd;
+}
+.tribute-container ul.select li span {
+  font-weight: bold;
+}
+.tribute-container ul.select li.no-match {
+  cursor: default;
+}
+.tribute-container .menu-highlighted {
+  font-weight: bold;
+}

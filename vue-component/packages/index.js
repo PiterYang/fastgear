@@ -1,8 +1,10 @@
 import SeasonRange from "./date-season-range/index.js";
+import Todo from "./todo/index";
 // ...如果还有的话继续添加
 
 const components = [
-  SeasonRange
+  SeasonRange,
+  Todo
   // ...如果还有的话继续添加
 ];
 
@@ -19,6 +21,7 @@ if (typeof window !== "undefined" && window.Vue) {
 
 export default {
   install,
-  SeasonRange
+  SeasonRange,
+  Todo
   // ...如果还有的话继续添加
 };

@@ -1,3 +1,9 @@
+const path = require("path");
+
+function resolve(dir) {
+  return path.join(__dirname, dir);
+}
+
 module.exports = {
   pages: {
     index: {
@@ -7,6 +13,16 @@ module.exports = {
     }
   },
   chainWebpack: config => {
+    config.module
+      .rule("compile")
+      .test(/\.js$/)
+      .include.add(resolve("node_modules/element-ui/packages"))
+      .add(resolve("node_modules/element-ui/src"))
+      .end()
+      .exclude.add(resolve("node_modules/element-ui/src/utils/date.js"))
+      .end()
+      .use("babel")
+      .loader("babel-loader");
     config.module.rule("js");
     config.module.rule("js").use("babel-loader");
     config.module.rule("js").use("cache-loader");

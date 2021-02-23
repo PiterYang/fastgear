@@ -31,6 +31,14 @@ const myRoutes = [
               import(
                 /* webpackChunkName: "season" */ "../pages/components/season"
               )
+          },
+          {
+            path: "todo",
+            name: "todo",
+            component: () =>
+              import(
+                /* webpackChunkName: "season" */ "../pages/components/todo"
+              )
           }
         ]
       },

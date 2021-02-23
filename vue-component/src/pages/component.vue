@@ -26,6 +26,7 @@
                     <el-menu-item index="/component/rich_text_editor">rich text editor</el-menu-item>
                     <el-menu-item index="/component/tree_select">tree select</el-menu-item>
                     <el-menu-item index="/component/all_select">all select</el-menu-item>
+                    <el-menu-item index="/component/todo">todo</el-menu-item>
                 </el-menu-item-group>
             </el-menu>
         </div>
