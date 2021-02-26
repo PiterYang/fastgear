@@ -28,6 +28,7 @@
             :values="values"
             :ref="item.id"
             :getLastActiveTodo="getLastActiveTodo"
+            :innerHTML="item.innerHTML"
         ></todo>
     </div>
 </template>

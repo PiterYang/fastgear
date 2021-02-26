@@ -34,6 +34,12 @@ export default {
         },
         getLastActiveTodo: {
             type: Function
+        },
+        innerHTML: {
+            type: String,
+            default() {
+                return '';
+            }
         }
     },
     data() {
@@ -43,8 +49,7 @@ export default {
     },
     mounted() {
         // example of alternative callback
-        document.getElementById(this.id).innerHTML =
-            '<span contentEditable="false" class="fg-todo-follower">@@tao.yang</span>&nbsp;sdf<span contentEditable="false" class="fg-todo-follower">@@tao.yang</span>&nbsp;';
+        document.getElementById(this.id).innerHTML = this.innerHTML;
         let TributeClass = this.$refs['tribute'].getTribute();
         let tribute = new TributeClass({
             collection: [
