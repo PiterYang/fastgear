@@ -1,12 +1,12 @@
 <template>
     <div style="overflow: hidden">
         <div class="mark"></div>
-        <p
+        <span
             :id="id"
             contenteditable
             class="tribute-demo-input"
-            placeholder="Type '@' for To,Type '@@' for follower,Type '//' for Due date"
-        ></p>
+            placeholder="@san.zhang 完成线上培训课程 @@si.li //2020-12-24 10:00"
+        ></span>
         <tribute ref="tribute" />
     </div>
 </template>
@@ -43,30 +43,34 @@ export default {
     },
     mounted() {
         // example of alternative callback
+        document.getElementById(this.id).innerHTML =
+            '<span contentEditable="false" class="fg-todo-follower">@@tao.yang</span>&nbsp;sdf<span contentEditable="false" class="fg-todo-follower">@@tao.yang</span>&nbsp;';
         let TributeClass = this.$refs['tribute'].getTribute();
-        let _this = this;
         let tribute = new TributeClass({
             collection: [
                 {
                     trigger: '@@',
-                    // values: _this.values,
-                    values: [
-                        {
-                            key: 'hhhh1',
-                            value: 'hhhh1',
-                            uid: 'uid1@@'
-                        },
-                        {
-                            key: 'hhhh12',
-                            value: 'hhhh12',
-                            uid: 'uid12@@'
-                        },
-                        {
-                            key: 'hhhh23',
-                            value: 'hhhh23',
-                            uid: 'uid23@@'
-                        }
-                    ],
+                    values: this.values,
+                    // values: [
+                    //     {
+                    //         key: 'hhhh1',
+                    //         value: 'hhhh1',
+                    //         uid: 'uid1@@',
+                    //         uname: 'name1'
+                    //     },
+                    //     {
+                    //         key: 'hhhh12',
+                    //         value: 'hhhh12',
+                    //         uid: 'uid12@@',
+                    //         uname: 'name2'
+                    //     },
+                    //     {
+                    //         key: 'hhhh23',
+                    //         value: 'hhhh23',
+                    //         uid: 'uid23@@',
+                    //         uname: 'name3'
+                    //     }
+                    // ],
                     selectTemplate: function(item) {
                         if (typeof item === 'undefined') return null;
                         if (this.range.isContentEditable(this.current.element)) {
@@ -82,30 +86,24 @@ export default {
 
                         return '@' + item.original.value;
                     },
+                    menuItemTemplate: function(item) {
+                        return (
+                            '<span contenteditable="false" class="left">' +
+                            item.string +
+                            '</span>' +
+                            '<span class="right">' +
+                            item.original.uname +
+                            '</span>'
+                        );
+                    },
                     requireLeadingSpace: true,
-                    menuShowMinLength: 0,
+                    // menuShowMinLength: 1,
                     noMatchTemplate: null
                 },
 
                 {
                     trigger: '//',
-                    values: [
-                        {
-                            key: 'hhhh1',
-                            value: 'hhhh1',
-                            email: 'hhhh1'
-                        },
-                        {
-                            key: 'hhhh12',
-                            value: 'hhhh12',
-                            email: 'hhhh12'
-                        },
-                        {
-                            key: 'hhhh23',
-                            value: 'hhhh23',
-                            email: 'hhhh23'
-                        }
-                    ],
+                    values: [],
                     // values: _this.values,
                     selectTemplate: function(item) {
                         if (typeof item === 'undefined') return null;
@@ -123,27 +121,31 @@ export default {
                     },
                     requireLeadingSpace: true,
                     noMatchTemplate: null
+                    //  menuShowMinLength: 1,
                 },
                 {
                     trigger: '@',
-                    values: [
-                        {
-                            key: 'test1',
-                            value: 'test1',
-                            uid: 'uid1'
-                        },
-                        {
-                            key: 'test12',
-                            value: 'test12',
-                            uid: 'uid12'
-                        },
-                        {
-                            key: 'test23',
-                            value: 'test23',
-                            uid: 'uid23'
-                        }
-                    ],
-                    // values: _this.values,
+                    // values: [
+                    //     {
+                    //         key: 'key1',
+                    //         value: 'value11',
+                    //         uid: 'uid1',
+                    //         uname: 'name3'
+                    //     },
+                    //     {
+                    //         key: 'key2',
+                    //         value: 'value22',
+                    //         uid: 'uid12',
+                    //         uname: 'name3'
+                    //     },
+                    //     {
+                    //         key: 'key3',
+                    //         value: 'value33',
+                    //         uid: 'uid23',
+                    //         uname: 'name3'
+                    //     }
+                    // ],
+                    values: this.values,
                     selectTemplate: function(item) {
                         if (typeof item === 'undefined') return null;
                         if (this.range.isContentEditable(this.current.element)) {
@@ -159,12 +161,24 @@ export default {
 
                         return '@' + item.original.value;
                     },
+                    menuItemTemplate: function(item) {
+                        console.log(item);
+                        return (
+                            '<span contenteditable="false" class="left">' +
+                            item.string +
+                            '</span>' +
+                            '<span class="right">' +
+                            item.original.uname +
+                            '</span>'
+                        );
+                    },
                     requireLeadingSpace: true,
                     noMatchTemplate: null
+
                     // autocompleteMode: true
                 }
             ],
-            vue: _this
+            vue: this
             // menuContainer: document.getElementById('content'),
         });
         this.tribute = tribute;
@@ -187,6 +201,7 @@ export default {
 .tribute-demo-input {
     outline: none;
     border: none;
+    display: block;
     padding: 3px 5px;
     border-radius: 2px;
     font-size: 15px;
@@ -200,16 +215,19 @@ export default {
         background: #ecf5ff;
         padding: 0 4px;
         color: #409eff;
+        user-select: none;
     }
     .fg-todo-follower {
         background: #fdf6ec;
         padding: 0 4px;
         color: #e6a23c;
+        user-select: none;
     }
     .fg-todo-due-date {
         background: #f4f4f5;
         padding: 0 4px;
         color: #909399;
+        user-select: none;
     }
 }
 [contenteditable='true']:empty:before {

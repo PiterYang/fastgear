@@ -27,6 +27,44 @@ export default {
     mounted() {
         this.$refs.datePanel.value = this.date;
         this.$refs.datePanel.showTime = this.showTime;
+        this.$refs.datePanel.shortcuts = [
+            {
+                text: '明天',
+                onClick: () => {
+                    this.$options.tribute.selectItemAtIndex(
+                        'date',
+                        event,
+                        this.pattern('yyyy-MM-dd hh:mm:ss', this.addHours(19, this.addDays(1))),
+                        'customSelection'
+                    );
+                    this.$options.tribute.hideMenu();
+                }
+            },
+            {
+                text: '三天后',
+                onClick: () => {
+                    this.$options.tribute.selectItemAtIndex(
+                        'date',
+                        event,
+                        this.pattern('yyyy-MM-dd hh:mm:ss', this.addHours(19, this.addDays(3))),
+                        'customSelection'
+                    );
+                    this.$options.tribute.hideMenu();
+                }
+            },
+            {
+                text: '下周',
+                onClick: () => {
+                    this.$options.tribute.selectItemAtIndex(
+                        'date',
+                        event,
+                        this.pattern('yyyy-MM-dd hh:mm:ss', this.addHours(19, this.addDays(7))),
+                        'customSelection'
+                    );
+                    this.$options.tribute.hideMenu();
+                }
+            }
+        ];
         this.$refs.datePanel.visible = true;
     },
     methods: {
@@ -35,6 +73,16 @@ export default {
             this.$refs.datePanel.resetView && this.$refs.datePanel.resetView();
 
             this.$emit('change', date);
+        },
+        addDays(days, date) {
+            let newDate = date || new Date();
+            newDate.setDate(newDate.getDate() + days);
+            return newDate;
+        },
+        addHours(hours, date, min = 0, sec = 0) {
+            let newDate = date || new Date();
+            newDate.setHours(hours, min, sec);
+            return newDate;
         },
         comfirm(date) {
             // const el = this.$options.tribute.current.element;
@@ -127,7 +175,10 @@ export default {
 //     display: none !important;
 // }
 .date-panel /deep/ .el-picker-panel {
-    width: 380px;
+    width: 420px;
+}
+.date-panel /deep/ .el-time-panel {
+    width: 158px;
 }
 //
 </style>

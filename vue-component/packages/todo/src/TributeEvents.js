@@ -119,6 +119,9 @@ class TributeEvents {
   }
 
   keyup(instance, event) {
+    if (event.target.innerHTML.includes("<br>")) {
+      event.target.innerHTML = "";
+    }
     if (instance.inputEvent) {
       instance.inputEvent = false;
     }
@@ -312,9 +315,11 @@ class TributeEvents {
       },
       enter: (e, el) => {
         // choose selection
+
         if (this.tribute.isActive && this.tribute.current.filteredItems) {
           e.preventDefault();
           e.stopPropagation();
+          console.log(11);
           setTimeout(() => {
             if (this.tribute.current.collection.trigger === "//") {
               this.tribute.selectItemAtIndex(
@@ -330,7 +335,9 @@ class TributeEvents {
             this.tribute.hideMenu();
           }, 0);
         } else {
+          console.log(22);
           e.preventDefault();
+          // e.stopPropagation();
           this.tribute.vue.addTodo();
         }
       },
@@ -396,9 +403,6 @@ class TributeEvents {
         }
       },
       delete: (e, el) => {
-        if (el.innerHTML === "") {
-          this.tribute.vue.deleteTodo(el.getAttribute("id"));
-        }
         if (
           this.tribute.isActive &&
           this.tribute.current.mentionText.length < 1
@@ -406,6 +410,13 @@ class TributeEvents {
           this.tribute.hideMenu();
         } else if (this.tribute.isActive) {
           this.tribute.showMenuFor(el);
+        }
+        if (el.children.length === 1 && !el.innerHTML.includes("&nbsp;")) {
+          el.innerHTML = "";
+          return;
+        }
+        if (el.innerHTML === "") {
+          this.tribute.vue.deleteTodo(el.getAttribute("id"));
         }
       }
     };

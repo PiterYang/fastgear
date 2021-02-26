@@ -5,10 +5,18 @@
             <el-button size="mini" @click="handleFollower">+ Followr</el-button>
             <el-button size="mini" @click="handleDueDate">+ Due date</el-button>
             <span>
-                shortcuts: To
-                <span class="shortcut">@</span>&nbsp;Follower
-                <span class="shortcut">@@</span>&nbsp;Due date
-                <span class="shortcut">//</span>
+                <span style="padding-left: 54px;">
+                    shortcuts: To&nbsp;
+                    <span class="shortcut">@</span>
+                </span>
+                <span style="padding-left: 20px">
+                    Follower&nbsp;
+                    <span class="shortcut">@@</span>
+                </span>
+                <span style="padding-left: 20px;">
+                    Due date&nbsp;
+                    <span class="shortcut">//</span>
+                </span>
             </span>
         </div>
         <todo
@@ -32,21 +40,52 @@ export default {
     name: 'FgTodo',
     data() {
         return {
-            todoItem: [{id: 'todo-id' + new Date().getTime()}],
+            // todoItem: [{id: 'todo-id' + new Date().getTime(), innerHTML: ''}],
             lastActiveEl: null
         };
     },
     props: {
         values: {
-            type: Array
+            type: Array,
+            default() {
+                return [
+                    {
+                        key: 'hhhh1',
+                        value: 'hhhh1',
+                        uid: 'uid1@@',
+                        uname: 'name1'
+                    },
+                    {
+                        key: 'hhhh12',
+                        value: 'hhhh12',
+                        uid: 'uid12@@',
+                        uname: 'name2'
+                    },
+                    {
+                        key: 'hhhh23',
+                        value: 'hhhh23',
+                        uid: 'uid23@@',
+                        uname: 'name3'
+                    }
+                ];
+            }
+        },
+        todoItem: {
+            type: Array,
+            default() {
+                return [{id: 'todo-id' + new Date().getTime(), innerHTML: ''}];
+            }
         }
     },
     methods: {
         addTodo() {
             const random = new Date().getTime();
-            this.todoItem.push({id: 'todo-id' + random});
+            this.todoItem.push({id: 'todo-id' + random, innerHTML: ''});
             setTimeout(() => {
                 document.querySelector(`#todo-id${random}`).focus();
+            });
+            setTimeout(() => {
+                this.getData();
             });
         },
         deleteTodo(id) {
@@ -94,6 +133,7 @@ export default {
             this.getTribute(1);
         },
         getLastActiveTodo(event) {
+            console.log(111);
             this.lastActiveEl = event.target;
         },
         getTribute(index) {
@@ -106,13 +146,40 @@ export default {
                 el = document.getElementById(this.todoItem[last].id);
                 this.$refs[this.todoItem[last].id][0].tribute.showMenuForCollection(el, index);
             }
+        },
+        getData() {
+            const list = this.todoItem.filter(v => {
+                return document.getElementById(v.id).innerHTML.trim() !== '';
+            });
+            const getValue = el => [].slice.call(el).map(v => v.getAttribute('value'));
+            // const querySelectorAll = document.querySelectorAll;
+            const todos = list.map(v => {
+                const el = document.getElementById(v.id);
+                const followerEl = document.querySelectorAll(`#${v.id} .fg-todo-follower`);
+                const toEl = document.querySelectorAll(`#${v.id} .fg-todo-to`);
+                const dueDateEl = document.querySelectorAll(`#${v.id} .fg-todo-due-date`);
+                let todo = {};
+                console.log('follerEl', followerEl);
+                todo.follower = getValue(followerEl);
+                todo.to = getValue(toEl);
+                todo.dueDate = getValue(dueDateEl);
+                todo.content = el.innerHTML
+                    .replace(/<[^>]+>(.*?)<\/[^>]+>/g, '')
+                    .replace(/&nbsp;/gi, ' ')
+                    .trim(); //去掉所有的html标记和标记里面的内容
+                todo.id = v.id;
+                todo.innerHTML = el.innerHTML;
+                return todo;
+            });
+            console.log('todos', todos);
+            return todos;
         }
     }
 };
 </script>
 <style lang="less" scoped>
 .fg-todo-wrap {
-    min-width: 500px;
+    min-width: 650px;
     border: 1px solid #c4c4c4;
     min-height: 200px;
     .fg-todo-header {
@@ -120,7 +187,7 @@ export default {
         padding: 3px;
         border-bottom: 1px solid #c4c4c4;
         color: #333333;
-        font-size: 12px;
+        font-size: 14px;
         /deep/ .el-button--mini {
             padding: 4px 12px;
         }
