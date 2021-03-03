@@ -56,27 +56,27 @@ export default {
             collection: [
                 {
                     trigger: '@@',
-                    // values: this.values,
-                    values: [
-                        {
-                            key: 'hhhh1',
-                            value: 'hhhh1',
-                            uid: 'uid1@@',
-                            uname: 'name1'
-                        },
-                        {
-                            key: 'hhhh12',
-                            value: 'hhhh12',
-                            uid: 'uid12@@',
-                            uname: 'name2'
-                        },
-                        {
-                            key: 'hhhh23',
-                            value: 'hhhh23',
-                            uid: 'uid23@@',
-                            uname: 'name3'
-                        }
-                    ],
+                    values: this.values,
+                    // values: [
+                    //     {
+                    //         key: 'hhhh1',
+                    //         value: 'hhhh1',
+                    //         uid: 'uid1@@',
+                    //         uname: 'name1'
+                    //     },
+                    //     {
+                    //         key: 'hhhh12',
+                    //         value: 'hhhh12',
+                    //         uid: 'uid12@@',
+                    //         uname: 'name2'
+                    //     },
+                    //     {
+                    //         key: 'hhhh23',
+                    //         value: 'hhhh23',
+                    //         uid: 'uid23@@',
+                    //         uname: 'name3'
+                    //     }
+                    // ],
                     selectTemplate: function(item) {
                         if (typeof item === 'undefined') return null;
                         if (this.range.isContentEditable(this.current.element)) {
@@ -131,27 +131,27 @@ export default {
                 },
                 {
                     trigger: '@',
-                    values: [
-                        {
-                            key: 'key1',
-                            value: 'value11',
-                            uid: 'uid1',
-                            uname: 'name3'
-                        },
-                        {
-                            key: 'key2',
-                            value: 'value22',
-                            uid: 'uid12',
-                            uname: 'name3'
-                        },
-                        {
-                            key: 'key3',
-                            value: 'value33',
-                            uid: 'uid23',
-                            uname: 'name3'
-                        }
-                    ],
-                    // values: this.values,
+                    // values: [
+                    //     {
+                    //         key: 'key1',
+                    //         value: 'value11',
+                    //         uid: 'uid1',
+                    //         uname: 'name3'
+                    //     },
+                    //     {
+                    //         key: 'key2',
+                    //         value: 'value22',
+                    //         uid: 'uid12',
+                    //         uname: 'name3'
+                    //     },
+                    //     {
+                    //         key: 'key3',
+                    //         value: 'value33',
+                    //         uid: 'uid23',
+                    //         uname: 'name3'
+                    //     }
+                    // ],
+                    values: this.values,
                     selectTemplate: function(item) {
                         if (typeof item === 'undefined') return null;
                         if (this.range.isContentEditable(this.current.element)) {
