@@ -1,35 +1,38 @@
 <template>
     <div class="fg-todo-wrap">
         <div class="fg-todo-header">
-            <el-button size="mini" @click="handleTo">+ To</el-button>
-            <el-button size="mini" @click="handleFollower">+ Followr</el-button>
-            <el-button size="mini" @click="handleDueDate">+ Due date</el-button>
+            <el-button size="mini" @mousedown.native="handleTo($event)">+ To</el-button>
+            <el-button size="mini" @mousedown.native="handleFollower($event)">+ Followr</el-button>
+            <el-button size="mini" @mousedown.native="handleDueDate($event)">+ Due date</el-button>
             <span>
-                <span style="padding-left: 54px;">
+                <span style="padding-left: 57px;">
                     shortcuts: To&nbsp;
                     <span class="shortcut">@</span>
                 </span>
-                <span style="padding-left: 20px">
+                <span style="padding-left: 12px">
                     Follower&nbsp;
                     <span class="shortcut">@@</span>
                 </span>
-                <span style="padding-left: 20px;">
+                <span style="padding-left: 12px;">
                     Due date&nbsp;
                     <span class="shortcut">//</span>
                 </span>
             </span>
         </div>
-        <todo
-            v-for="item in todoItem"
-            :id="item.id"
-            :key="item.id"
-            :addTodo="addTodo"
-            :deleteTodo="deleteTodo"
-            :values="values"
-            :ref="item.id"
-            :getLastActiveTodo="getLastActiveTodo"
-            :innerHTML="item.innerHTML"
-        ></todo>
+        <span class="todo-editor-container">
+            <todo
+                v-for="(item, index) in todoItem"
+                :id="item.id"
+                :key="item.id"
+                :addTodo="() => addTodo(index)"
+                :deleteTodo="deleteTodo"
+                :values="values"
+                :ref="item.id"
+                :getLastActiveTodo="getLastActiveTodo"
+                :innerHTML="item.innerHTML"
+                :container="container"
+            ></todo>
+        </span>
     </div>
 </template>
 <script>
@@ -76,18 +79,21 @@ export default {
             default() {
                 return [{id: 'todo-id' + new Date().getTime(), innerHTML: ''}];
             }
+        },
+        container: {
+            default: () => document.body
         }
     },
     methods: {
-        addTodo() {
+        addTodo(index) {
             const random = new Date().getTime();
-            this.todoItem.push({id: 'todo-id' + random, innerHTML: ''});
+            this.todoItem.splice(index + 1, 0, {id: 'todo-id' + random, innerHTML: ''});
             setTimeout(() => {
                 document.querySelector(`#todo-id${random}`).focus();
             });
-            setTimeout(() => {
-                this.getData();
-            });
+            // setTimeout(() => {
+            //     this.getData();
+            // });
         },
         deleteTodo(id) {
             if (this.todoItem.length > 1) {
@@ -124,21 +130,32 @@ export default {
 
             sel.addRange(range);
         },
-        handleTo() {
+        handleTo(e) {
+            e.preventDefault();
             this.getTribute(2);
         },
-        handleFollower() {
+        handleFollower(e) {
+            e.preventDefault();
             this.getTribute(0);
         },
-        handleDueDate() {
+        handleDueDate(e) {
+            e.preventDefault();
             this.getTribute(1);
         },
         getLastActiveTodo(event) {
-            console.log(111);
-            this.lastActiveEl = event.target;
+            // this.lastActiveEl = document
+            //     .querySelector('.todo-editor-container')
+            //     .contains(document.activeElement)
+            //     ? document.activeElement
+            //     : event.target;
         },
         getTribute(index) {
             let el;
+            this.lastActiveEl = document
+                .querySelector('.todo-editor-container')
+                .contains(document.activeElement)
+                ? document.activeElement
+                : null;
             if (this.lastActiveEl) {
                 const id = this.lastActiveEl.getAttribute('id');
                 this.$refs[id][0].tribute.showMenuForCollection(this.lastActiveEl, index);
@@ -160,7 +177,6 @@ export default {
                 const toEl = document.querySelectorAll(`#${v.id} .fg-todo-to`);
                 const dueDateEl = document.querySelectorAll(`#${v.id} .fg-todo-due-date`);
                 let todo = {};
-                console.log('follerEl', followerEl);
                 todo.follower = getValue(followerEl);
                 todo.to = getValue(toEl);
                 todo.dueDate = getValue(dueDateEl);
@@ -172,7 +188,6 @@ export default {
                 todo.innerHTML = el.innerHTML;
                 return todo;
             });
-            console.log('todos', todos);
             return todos;
         }
     }
@@ -180,17 +195,21 @@ export default {
 </script>
 <style lang="less" scoped>
 .fg-todo-wrap {
-    min-width: 650px;
+    width: 650px;
     border: 1px solid #c4c4c4;
     min-height: 200px;
     .fg-todo-header {
         background: #fafafa;
-        padding: 3px;
+        padding: 3px 12px;
         border-bottom: 1px solid #c4c4c4;
         color: #333333;
         font-size: 14px;
+        line-height: 24px;
         /deep/ .el-button--mini {
-            padding: 4px 12px;
+            padding: 2px 12px;
+        }
+        .el-button--mini + .el-button--mini {
+            margin-left: 16px;
         }
         .shortcut {
             background: #dedede;

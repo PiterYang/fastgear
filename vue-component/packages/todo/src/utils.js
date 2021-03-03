@@ -44,3 +44,13 @@ if (typeof window !== "undefined" && typeof window.CustomEvent !== "function") {
 
   window.CustomEvent = CustomEvent;
 }
+export const addHours = (hours, date, min = 0, sec = 0) => {
+  let newDate = date || new Date();
+  newDate.setHours(hours, min, sec);
+  return newDate;
+};
+export const addDays = (days, date) => {
+  let newDate = date || new Date();
+  newDate.setDate(newDate.getDate() + days);
+  return newDate;
+};

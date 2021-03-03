@@ -310,6 +310,7 @@ export default {
                     ) {
                         return;
                     }
+
                     this.currentMentionTextSnapshot = this.current.mentionText;
 
                     // create the menu if it doesn't exist.
@@ -367,7 +368,7 @@ export default {
 
                         this.range.positionMenuAtCaret(scrollTo);
                         if (this.current.collection.trigger === '//') {
-                            if (this.current.mentionText !== '') {
+                            if (this.current.mentionText !== '' && !fromActiveLink) {
                                 this.hideMenu();
                             }
                             return;

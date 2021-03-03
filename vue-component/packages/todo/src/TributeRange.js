@@ -219,7 +219,6 @@ class TributeRange {
       lastNode = frag.appendChild(node);
     }
     range.insertNode(frag);
-
     // Preserve the selection
     if (lastNode) {
       range = range.cloneRange();
@@ -391,7 +390,13 @@ class TributeRange {
               mostRecentTriggerCharPos - 1,
               mostRecentTriggerCharPos
             )
-          ))
+          ) ||
+          escape(
+            effectiveRange.substring(
+              mostRecentTriggerCharPos - 1,
+              mostRecentTriggerCharPos
+            )
+          ).indexOf("%u") >= 0)
       ) {
         let currentTriggerSnippet = effectiveRange.substring(
           mostRecentTriggerCharPos + triggerChar.length,
@@ -441,6 +446,7 @@ class TributeRange {
     for (let cidx = 0, len = str.length; cidx < len; cidx++) {
       let firstChar = cidx === str.length - 1;
       let leadingSpace = /\s/.test(reversedStr[cidx + 1]);
+      let china = escape(reversedStr[cidx + 1]).indexOf("%u") >= 0;
 
       let match = true;
       for (let triggerIdx = trigger.length - 1; triggerIdx >= 0; triggerIdx--) {
@@ -449,7 +455,7 @@ class TributeRange {
           break;
         }
       }
-      if (match && (firstChar || leadingSpace)) {
+      if (match && (firstChar || leadingSpace || china)) {
         index = str.length - 1 - cidx;
         break;
       }

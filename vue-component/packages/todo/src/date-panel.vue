@@ -5,11 +5,11 @@
 </template>
 <script>
 import DatePanel from './el-date-panel.vue';
-
+import {addDays, addHours} from './utils';
 export default {
     props: {
         date: {
-            default: () => new Date(),
+            default: () => addHours(19, addDays(1)),
             type: Date
         },
         showTime: {
@@ -34,7 +34,7 @@ export default {
                     this.$options.tribute.selectItemAtIndex(
                         'date',
                         event,
-                        this.pattern('yyyy-MM-dd hh:mm:ss', this.addHours(19, this.addDays(1))),
+                        this.pattern('yyyy-MM-dd HH:mm:ss', addHours(19, addDays(1))),
                         'customSelection'
                     );
                     this.$options.tribute.hideMenu();
@@ -46,7 +46,7 @@ export default {
                     this.$options.tribute.selectItemAtIndex(
                         'date',
                         event,
-                        this.pattern('yyyy-MM-dd hh:mm:ss', this.addHours(19, this.addDays(3))),
+                        this.pattern('yyyy-MM-dd HH:mm:ss', addHours(19, addDays(3))),
                         'customSelection'
                     );
                     this.$options.tribute.hideMenu();
@@ -58,7 +58,7 @@ export default {
                     this.$options.tribute.selectItemAtIndex(
                         'date',
                         event,
-                        this.pattern('yyyy-MM-dd hh:mm:ss', this.addHours(19, this.addDays(7))),
+                        this.pattern('yyyy-MM-dd HH:mm:ss', addHours(19, addDays(7))),
                         'customSelection'
                     );
                     this.$options.tribute.hideMenu();
@@ -74,16 +74,6 @@ export default {
 
             this.$emit('change', date);
         },
-        addDays(days, date) {
-            let newDate = date || new Date();
-            newDate.setDate(newDate.getDate() + days);
-            return newDate;
-        },
-        addHours(hours, date, min = 0, sec = 0) {
-            let newDate = date || new Date();
-            newDate.setHours(hours, min, sec);
-            return newDate;
-        },
         comfirm(date) {
             // const el = this.$options.tribute.current.element;
             // el.scrollLeft = el.scrollWidth;
@@ -92,7 +82,7 @@ export default {
             this.$options.tribute.selectItemAtIndex(
                 'date',
                 event,
-                this.pattern('yyyy-MM-dd hh:mm:ss', date),
+                this.pattern('yyyy-MM-dd HH:mm:ss', date),
                 'customSelection'
             );
             // return;

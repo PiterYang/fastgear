@@ -1,3 +1,4 @@
+import { addDays, addHours } from "./utils";
 class TributeEvents {
   constructor(tribute) {
     this.tribute = tribute;
@@ -43,10 +44,12 @@ class TributeEvents {
     element.boundKeyup = this.keyup.bind(element, this);
     element.boundInput = this.input.bind(element, this);
     element.boundClick = this.elementClick.bind(element, this);
+    element.boundPaste = this.paste.bind(element, this);
     element.addEventListener("keydown", element.boundKeydown, true);
     element.addEventListener("keyup", element.boundKeyup, true);
     element.addEventListener("input", element.boundInput, true);
     element.addEventListener("click", element.boundClick, true);
+    element.addEventListener("paste", element.boundPaste, true);
   }
 
   unbind(element) {
@@ -54,11 +57,12 @@ class TributeEvents {
     element.removeEventListener("keyup", element.boundKeyup, true);
     element.removeEventListener("input", element.boundInput, true);
     element.removeEventListener("click", element.boundClick, true);
-
+    element.removeEventListener("paste", element.boundPaste, true);
     delete element.boundKeydown;
     delete element.boundKeyup;
     delete element.boundInput;
     delete element.boundClick;
+    delete element.boundPaste;
   }
 
   keydown(instance, event) {
@@ -76,6 +80,64 @@ class TributeEvents {
         instance.callbacks()[o.value.toLowerCase()](event, element);
       }
     });
+  }
+  paste(instance, e) {
+    e.preventDefault();
+    var text = null;
+    let html = null;
+    if (window.clipboardData && window.clipboardData.setData) {
+      // IE
+      text = window.clipboardData.getData("text");
+      html = window.clipboardData.getData("text/html");
+    } else {
+      text = (e.originalEvent || e).clipboardData.getData("text/plain") || "";
+      html = (e.originalEvent || e).clipboardData.getData("text/html") || "";
+    }
+    if (document.body.createTextRange) {
+      let textRange;
+      if (document.selection) {
+        textRange = document.selection.createRange();
+      } else if (window.getSelection) {
+        let sel = window.getSelection();
+        var range = sel.getRangeAt(0);
+
+        // 创建临时元素，使得TextRange可以移动到正确的位置
+        var tempEl = document.createElement("span");
+        tempEl.innerHTML = "&#FEFF;";
+        range.deleteContents();
+        range.insertNode(tempEl);
+        textRange = document.body.createTextRange();
+        textRange.moveToElementText(tempEl);
+        tempEl.parentNode.removeChild(tempEl);
+      }
+      textRange.text = text;
+      textRange.collapse(false);
+      textRange.select();
+    } else {
+      // Chrome之类浏览器
+      if (!html.includes("fg-todo")) {
+        document.execCommand("insertText", false, text);
+      } else {
+        let el = document.createElement("div");
+        el.innerHTML = html.replace(/<br[^>]+>/g, "");
+        let frag = document.createDocumentFragment(),
+          node;
+        while ((node = el.firstChild)) {
+          if (node.classList.length) {
+            frag.appendChild(node);
+          } else {
+            let textNode = document.createTextNode(node.innerText);
+            el.removeChild(node);
+            frag.appendChild(textNode);
+          }
+        }
+
+        e.target.appendChild(frag);
+        instance.tribute.placeCaretAtEnd(e.target);
+      }
+
+      // document.execCommand("insertText", false, text);
+    }
   }
 
   input(instance, event) {
@@ -120,12 +182,28 @@ class TributeEvents {
 
   keyup(instance, event) {
     if (event.target.innerHTML.includes("<br>")) {
-      event.target.innerHTML = "";
+      const children = event.target.children;
+      const br = children[children.length - 1];
+      const br2 = children[children.length - 2];
+      let prev;
+      if (br2 && br2.tagName === "BR") {
+        event.target.removeChild(br2);
+        prev = children[children.length - 3];
+      } else {
+        prev = children[children.length - 2];
+      }
+      if (br) {
+        event.target.removeChild(br);
+      }
+
+      if (prev) {
+        event.target.removeChild(prev);
+      }
     }
     if (instance.inputEvent) {
       instance.inputEvent = false;
     }
-    instance.updateSelection(this);
+    instance.updateSelection(this, event.keyCode);
     if (event.keyCode === 27) return;
 
     if (!instance.tribute.allowSpaces && instance.tribute.hasTrailingSpace) {
@@ -220,7 +298,7 @@ class TributeEvents {
     }
   }
 
-  updateSelection(el) {
+  updateSelection(el, keyCode) {
     this.tribute.current.element = el;
     let info = this.tribute.range.getTriggerInfo(
       false,
@@ -229,7 +307,6 @@ class TributeEvents {
       this.tribute.allowSpaces,
       this.tribute.autocompleteMode
     );
-
     if (info) {
       this.tribute.current.selectedPath = info.mentionSelectedPath;
       this.tribute.current.mentionText = info.mentionText;
@@ -319,13 +396,12 @@ class TributeEvents {
         if (this.tribute.isActive && this.tribute.current.filteredItems) {
           e.preventDefault();
           e.stopPropagation();
-          console.log(11);
           setTimeout(() => {
             if (this.tribute.current.collection.trigger === "//") {
               this.tribute.selectItemAtIndex(
                 "date",
                 "event",
-                this.pattern("yyyy-MM-dd hh:mm:ss", new Date()),
+                this.pattern("yyyy-MM-dd HH:mm:ss", addHours(19, addDays(1))),
                 "customSelection"
               );
             } else {
@@ -335,7 +411,6 @@ class TributeEvents {
             this.tribute.hideMenu();
           }, 0);
         } else {
-          console.log(22);
           e.preventDefault();
           // e.stopPropagation();
           this.tribute.vue.addTodo();
@@ -411,7 +486,20 @@ class TributeEvents {
         } else if (this.tribute.isActive) {
           this.tribute.showMenuFor(el);
         }
-        if (el.children.length === 1 && !el.innerHTML.includes("&nbsp;")) {
+        // 解决只有一个元素无法删除问题
+        // if (el.innerHTML.includes("<br>")) {
+        // const br = el.lastChild;
+        // const prev = el.previousSibling;
+        // el.innerHTML = el.innerHTML.replace(
+        //   /^<[^>]+>(.*?)<\/[^>]+><br>$/g,
+        //   ""
+        // );
+        // this.tribute.placeCaretAtEnd(el);
+        // }
+        if (
+          el.children.length === 1 &&
+          !el.innerHTML.replace(/<[^>]+>(.*?)<\/[^>]+>/g, "")
+        ) {
           el.innerHTML = "";
           return;
         }
