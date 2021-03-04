@@ -472,6 +472,9 @@ class TributeRange {
     let windowWidth = window.innerWidth;
     let windowHeight = window.innerHeight;
     let doc = document.documentElement;
+    if (!this.menuContainerIsBody) {
+      doc = this.tribute.menuContainer;
+    }
     let windowLeft =
       (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
     let windowTop =
@@ -683,6 +686,9 @@ class TributeRange {
 
     let rect = range.getBoundingClientRect();
     let doc = document.documentElement;
+    if (!this.menuContainerIsBody) {
+      doc = this.tribute.menuContainer;
+    }
     let windowLeft =
       (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
     let windowTop =
@@ -690,7 +696,6 @@ class TributeRange {
 
     let left = rect.left;
     let top = rect.top;
-
     let coordinates = {
       left: left + windowLeft,
       top: top + rect.height + windowTop
@@ -735,7 +740,6 @@ class TributeRange {
           : windowTop;
       delete coordinates.bottom;
     }
-
     if (!this.menuContainerIsBody) {
       coordinates.left = coordinates.left
         ? coordinates.left - this.tribute.menuContainer.offsetLeft
