@@ -41,7 +41,7 @@ export default {
                 return '';
             }
         },
-        container: {}
+        containerClass: {}
     },
     data() {
         return {
@@ -51,6 +51,8 @@ export default {
     mounted() {
         // example of alternative callback
         document.getElementById(this.id).innerHTML = this.innerHTML;
+        console.log('this.containerClass', this.containerClass);
+        console.log('document', document.querySelector(`.${this.containerClass}`));
         let TributeClass = this.$refs['tribute'].getTribute();
         let tribute = new TributeClass({
             collection: [
@@ -179,12 +181,12 @@ export default {
                     },
                     requireLeadingSpace: true,
                     noMatchTemplate: null
-
                     // autocompleteMode: true
                 }
             ],
             vue: this,
-            container: this.container
+            menuContainer: document.querySelector(`.${this.containerClass}`)
+
             // menuContainer: document.getElementById('content'),
         });
         this.tribute = tribute;

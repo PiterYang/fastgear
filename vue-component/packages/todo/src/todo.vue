@@ -30,7 +30,7 @@
                 :ref="item.id"
                 :getLastActiveTodo="getLastActiveTodo"
                 :innerHTML="item.innerHTML"
-                :container="container"
+                :containerClass="containerClass"
             ></todo>
         </span>
     </div>
@@ -80,8 +80,9 @@ export default {
                 return [{id: 'todo-id' + new Date().getTime(), innerHTML: ''}];
             }
         },
-        container: {
-            default: () => document.body
+        containerClass: {
+            type: String,
+            default: () => ''
         }
     },
     methods: {
