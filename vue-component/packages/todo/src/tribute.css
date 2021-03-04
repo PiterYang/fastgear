@@ -21,6 +21,8 @@
   box-sizing: border-box;
   margin: 5px 0;
   min-width: 240px;
+  height: 200px;
+  overflow: auto;
 }
 .tribute-container ul.select li {
   padding: 5px 5px;

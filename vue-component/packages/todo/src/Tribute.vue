@@ -298,6 +298,9 @@ export default {
                     return this.range.getDocument().body.appendChild(wrapper);
                 }
                 distoryMenu(child) {
+                    if (this.menuContainer) {
+                        return this.menuContainer.removeChild(child);
+                    }
                     this.range.getDocument().body.removeChild(child);
                 }
                 showMenuFor(element, scrollTo, fromActiveLink) {
