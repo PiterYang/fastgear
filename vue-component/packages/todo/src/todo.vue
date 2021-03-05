@@ -491,12 +491,12 @@ export default {
             }
         },
         getData() {
-            const list = this.todoItem.filter(v => {
-                return document.getElementById(v.id).innerHTML.trim() !== '';
-            });
+            // const list = this.todoItem.filter(v => {
+            //     return document.getElementById(v.id).innerHTML.trim() !== '';
+            // });
             const getValue = el => [].slice.call(el).map(v => v.getAttribute('value'));
             // const querySelectorAll = document.querySelectorAll;
-            const todos = list.map(v => {
+            const todos = this.todoItem.map(v => {
                 const el = document.getElementById(v.id);
                 const followerEl = document.querySelectorAll(`#${v.id} .fg-todo-follower`);
                 const toEl = document.querySelectorAll(`#${v.id} .fg-todo-to`);
@@ -510,7 +510,7 @@ export default {
                     .replace(/&nbsp;/gi, ' ')
                     .trim(); //去掉所有的html标记和标记里面的内容
                 todo.id = v.id;
-                todo.innerHTML = el.innerHTML;
+                todo.innerHTML = el.innerHTML.trim();
                 return todo;
             });
             return todos;
@@ -529,9 +529,10 @@ export default {
         border-bottom: 1px solid #c4c4c4;
         color: #333333;
         font-size: 14px;
-        line-height: 24px;
+        line-height: 25px;
         /deep/ .el-button--mini {
-            padding: 2px 12px;
+            padding: 1px 12px;
+            line-height: 18px;
         }
         .el-button--mini + .el-button--mini {
             margin-left: 16px;

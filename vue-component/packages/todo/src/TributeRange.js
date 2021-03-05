@@ -65,7 +65,7 @@ class TributeRange {
       }
 
       if (scrollTo) this.scrollIntoView();
-
+      // this.scrollIntoView();
       window.setTimeout(() => {
         let menuDimensions = {
           width: this.tribute.menu.offsetWidth,
@@ -723,6 +723,9 @@ class TributeRange {
 
       coordinates.top = "auto";
       coordinates.bottom = scrollStillAvailable + (windowHeight - rect.top);
+      if (!this.menuContainerIsBody) {
+        coordinates.bottom -= this.tribute.menuContainer.scrollTop;
+      }
     }
 
     menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
@@ -744,11 +747,13 @@ class TributeRange {
       coordinates.left = coordinates.left
         ? coordinates.left - this.tribute.menuContainer.offsetLeft
         : coordinates.left;
-      coordinates.top = coordinates.top
-        ? coordinates.top - this.tribute.menuContainer.offsetTop
-        : coordinates.top;
+      coordinates.top =
+        typeof coordinates.top === "string"
+          ? coordinates.top
+          : coordinates.top
+          ? coordinates.top - this.tribute.menuContainer.offsetTop
+          : coordinates.top;
     }
-
     return coordinates;
   }
 

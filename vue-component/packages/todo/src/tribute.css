@@ -20,8 +20,7 @@
   box-shadow: 0 2px 12px 0 rgb(0 0 0 / 10%);
   box-sizing: border-box;
   margin: 5px 0;
-  min-width: 240px;
-  height: 200px;
+  max-height: 200px;
   overflow: auto;
 }
 .tribute-container ul.select li {

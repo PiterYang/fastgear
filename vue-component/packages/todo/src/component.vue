@@ -203,7 +203,7 @@ export default {
     border: 1px solid rgba(0, 0, 0, 0.36);
     float: left;
     margin-right: 4px;
-    margin-top: 13px;
+    margin-top: 15px;
     margin-left: 12px;
 }
 .tribute-demo-input {

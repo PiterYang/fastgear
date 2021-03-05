@@ -597,7 +597,7 @@ module.exports = Object.keys || function keys(O) {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".mark{width:10px;height:10px;border:1px solid rgba(0,0,0,.36);float:left;margin-right:4px;margin-top:13px;margin-left:12px}.tribute-demo-input{outline:none;border:none;padding:3px 5px;border-radius:2px;font-size:14px;min-height:32px;cursor:text;width:calc(100% - 38px);float:left;margin:0;line-height:32px;min-width:1px}.tribute-demo-input .fg-todo-to{background:#e6f7ff;color:#1890ff}.tribute-demo-input .fg-todo-follower,.tribute-demo-input .fg-todo-to{padding:0 4px;display:inline-block;cursor:default;white-space:nowrap;height:20px;padding:0 5px;line-height:19px;border-radius:2px}.tribute-demo-input .fg-todo-follower{background:#fff7e6;color:#fa8c16}.tribute-demo-input .fg-todo-due-date{background:#f4f4f5;padding:0 4px;color:#636569;display:inline-block;cursor:default;white-space:nowrap;height:20px;padding:0 5px;line-height:19px;border-radius:2px}[contenteditable=true]:empty:before{content:attr(placeholder);display:block;color:#ccc}", ""]);
+exports.push([module.i, ".mark{width:10px;height:10px;border:1px solid rgba(0,0,0,.36);float:left;margin-right:4px;margin-top:15px;margin-left:12px}.tribute-demo-input{outline:none;border:none;padding:3px 5px;border-radius:2px;font-size:14px;min-height:32px;cursor:text;width:calc(100% - 38px);float:left;margin:0;line-height:32px;min-width:1px}.tribute-demo-input .fg-todo-to{background:#e6f7ff;color:#1890ff}.tribute-demo-input .fg-todo-follower,.tribute-demo-input .fg-todo-to{padding:0 4px;display:inline-block;cursor:default;white-space:nowrap;height:20px;padding:0 5px;line-height:19px;border-radius:2px}.tribute-demo-input .fg-todo-follower{background:#fff7e6;color:#fa8c16}.tribute-demo-input .fg-todo-due-date{background:#f4f4f5;padding:0 4px;color:#636569;display:inline-block;cursor:default;white-space:nowrap;height:20px;padding:0 5px;line-height:19px;border-radius:2px}[contenteditable=true]:empty:before{content:attr(placeholder);display:block;color:#ccc}", ""]);
 // Exports
 module.exports = exports;
 
@@ -7730,12 +7730,12 @@ var es6_regexp_replace = __webpack_require__("a481");
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es6.array.find-index.js
 var es6_array_find_index = __webpack_require__("20d6");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1d6de326-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/todo/src/component.vue?vue&type=template&id=4dda0577&
-var componentvue_type_template_id_4dda0577_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"overflow":"hidden"}},[_c('div',{staticClass:"mark"}),_c('span',{staticClass:"tribute-demo-input",attrs:{"id":_vm.id,"contenteditable":"","placeholder":"@san.zhang 完成线上培训课程 @@si.li //2020-12-24 10:00"}}),_c('tribute',{ref:"tribute"})],1)}
-var componentvue_type_template_id_4dda0577_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1d6de326-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/todo/src/component.vue?vue&type=template&id=59474135&
+var componentvue_type_template_id_59474135_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticStyle:{"overflow":"hidden"}},[_c('div',{staticClass:"mark"}),_c('span',{staticClass:"tribute-demo-input",attrs:{"id":_vm.id,"contenteditable":"","placeholder":"@san.zhang 完成线上培训课程 @@si.li //2020-12-24 10:00"}}),_c('tribute',{ref:"tribute"})],1)}
+var componentvue_type_template_id_59474135_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/todo/src/component.vue?vue&type=template&id=4dda0577&
+// CONCATENATED MODULE: ./packages/todo/src/component.vue?vue&type=template&id=59474135&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom.iterable.js
 var web_dom_iterable = __webpack_require__("ac6a");
@@ -8654,7 +8654,8 @@ var TributeRange_TributeRange = /*#__PURE__*/function () {
           this.tribute.menu.style.top = "auto";
         }
 
-        if (scrollTo) this.scrollIntoView();
+        if (scrollTo) this.scrollIntoView(); // this.scrollIntoView();
+
         window.setTimeout(function () {
           var menuDimensions = {
             width: _this.tribute.menu.offsetWidth,
@@ -9008,6 +9009,11 @@ var TributeRange_TributeRange = /*#__PURE__*/function () {
       var windowWidth = window.innerWidth;
       var windowHeight = window.innerHeight;
       var doc = document.documentElement;
+
+      if (!this.menuContainerIsBody) {
+        doc = this.tribute.menuContainer;
+      }
+
       var windowLeft = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
       var windowTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
       var menuTop = typeof coordinates.top === "number" ? coordinates.top : windowTop + windowHeight - coordinates.bottom - menuDimensions.height;
@@ -9138,6 +9144,11 @@ var TributeRange_TributeRange = /*#__PURE__*/function () {
       range.collapse(false);
       var rect = range.getBoundingClientRect();
       var doc = document.documentElement;
+
+      if (!this.menuContainerIsBody) {
+        doc = this.tribute.menuContainer;
+      }
+
       var windowLeft = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
       var windowTop = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
       var left = rect.left;
@@ -9162,7 +9173,7 @@ var TributeRange_TributeRange = /*#__PURE__*/function () {
         var parentRect = this.tribute.menuContainer ? this.tribute.menuContainer.getBoundingClientRect() : this.getDocument().body.getBoundingClientRect();
         var scrollStillAvailable = parentHeight - (windowHeight - parentRect.top);
         coordinates.top = "auto";
-        coordinates.bottom = scrollStillAvailable + (windowHeight - rect.top);
+        coordinates.bottom = scrollStillAvailable + (windowHeight - rect.top) - this.tribute.menuContainer.scrollTop;
       }
 
       menuIsOffScreen = this.isMenuOffScreen(coordinates, menuDimensions);
@@ -9179,7 +9190,7 @@ var TributeRange_TributeRange = /*#__PURE__*/function () {
 
       if (!this.menuContainerIsBody) {
         coordinates.left = coordinates.left ? coordinates.left - this.tribute.menuContainer.offsetLeft : coordinates.left;
-        coordinates.top = coordinates.top ? coordinates.top - this.tribute.menuContainer.offsetTop : coordinates.top;
+        coordinates.top = typeof coordinates.top === "string" ? coordinates.top : coordinates.top ? coordinates.top - this.tribute.menuContainer.offsetTop : coordinates.top;
       }
 
       return coordinates;
@@ -15091,8 +15102,8 @@ var componentvue_type_style_index_0_lang_less_scope_true_ = __webpack_require__(
 
 var component_component = normalizeComponent(
   src_componentvue_type_script_lang_js_,
-  componentvue_type_template_id_4dda0577_render,
-  componentvue_type_template_id_4dda0577_staticRenderFns,
+  componentvue_type_template_id_59474135_render,
+  componentvue_type_template_id_59474135_staticRenderFns,
   false,
   null,
   null,
