@@ -73,10 +73,15 @@ class TributeEvents {
 
     let element = this;
     instance.commandEvent = false;
-
+    if (event.keyCode === 39 || event.keyCode === 37) {
+      instance.commandEvent = true;
+    }
     TributeEvents.keys().forEach(o => {
       if (o.key === event.keyCode) {
-        instance.commandEvent = true;
+        if (o.key !== 8) {
+          instance.commandEvent = true;
+        }
+
         instance.callbacks()[o.value.toLowerCase()](event, element);
       }
     });
@@ -179,7 +184,9 @@ class TributeEvents {
   elementClick(instance, event) {
     instance.tribute.vue.getLastActiveTodo(event);
   }
-
+  isFocusOnElement() {
+    return this.tribute.range.getWindowSelection().focusNode.nodeType === 1;
+  }
   keyup(instance, event) {
     if (event.target.innerHTML.includes("<br>")) {
       const children = event.target.children;
@@ -248,7 +255,7 @@ class TributeEvents {
     if (
       ((instance.tribute.current.trigger ||
         instance.tribute.autocompleteMode) &&
-        instance.commandEvent === false) ||
+        (instance.commandEvent === false && !instance.isFocusOnElement())) ||
       (instance.tribute.isActive && event.keyCode === 8)
     ) {
       if (event.target.tagName !== "input") {

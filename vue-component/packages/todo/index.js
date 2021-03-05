@@ -1,4 +1,4 @@
-import Todo from "./src/todo.vue";
+import Todo from "./src/todo-editor.vue";
 
 Todo.install = Vue => Vue.component(Todo.name, Todo);
 

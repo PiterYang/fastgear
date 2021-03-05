@@ -2,10 +2,10 @@
     <div class="fg-todo-wrap">
         <div class="fg-todo-header">
             <el-button size="mini" @mousedown.native="handleTo($event)">+ To</el-button>
-            <el-button size="mini" @mousedown.native="handleFollower($event)">+ Followr</el-button>
+            <el-button size="mini" @mousedown.native="handleFollower($event)">+ Follower</el-button>
             <el-button size="mini" @mousedown.native="handleDueDate($event)">+ Due date</el-button>
             <span>
-                <span style="padding-left: 57px;">
+                <span style="padding-left: 52px;">
                     shortcuts: To&nbsp;
                     <span class="shortcut">@</span>
                 </span>
