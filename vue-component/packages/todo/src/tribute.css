@@ -21,6 +21,7 @@
   box-sizing: border-box;
   margin: 5px 0;
   max-height: 200px;
+  min-width: 240px;
   overflow: auto;
 }
 .tribute-container ul.select li {

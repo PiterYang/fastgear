@@ -508,6 +508,7 @@ export default {
                 todo.content = el.innerHTML
                     .replace(/<[^>]+>(.*?)<\/[^>]+>/g, '')
                     .replace(/&nbsp;/gi, ' ')
+                    .replace(/&amp;/g, '&')
                     .trim(); //去掉所有的html标记和标记里面的内容
                 todo.id = v.id;
                 todo.innerHTML = el.innerHTML.trim();
