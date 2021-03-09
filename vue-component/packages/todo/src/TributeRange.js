@@ -23,7 +23,6 @@ class TributeRange {
   positionMenuAtCaret(scrollTo) {
     let context = this.tribute.current,
       coordinates;
-
     let info = this.getTriggerInfo(
       false,
       this.tribute.hasTrailingSpace,
@@ -80,8 +79,8 @@ class TributeRange {
           window.innerHeight > menuDimensions.height &&
           (menuIsOffScreen.top || menuIsOffScreen.bottom);
         if (menuIsOffScreenHorizontally || menuIsOffScreenVertically) {
-          this.tribute.menu.style.cssText = "display: none";
-          this.positionMenuAtCaret(scrollTo);
+          // this.tribute.menu.style.cssText = "display: none";
+          // this.positionMenuAtCaret(scrollTo);
         }
       }, 0);
     } else {

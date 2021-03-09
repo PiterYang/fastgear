@@ -447,7 +447,6 @@ export default {
                     this.current.collection = this.collection[collectionIndex || 0];
                     this.current.externalTrigger = true;
                     this.current.element = element;
-
                     if (element.isContentEditable)
                         this.insertTextAtCursor(this.current.collection.trigger);
                     else this.insertAtCaret(element, this.current.collection.trigger);
@@ -525,7 +524,7 @@ export default {
 
                 selectItemAtIndex(index, originalEvent, date, customSelection) {
                     if (index === 'date') {
-                        const dateNumber = new Date(date).getTime();
+                        const dateNumber = new Date(date.replace(/-/g, '/')).getTime();
                         content = `<span contentEditable="false" class="fg-todo-due-date" value=${dateNumber}>${date}</span>`;
                         this.replaceText(
                             content,
