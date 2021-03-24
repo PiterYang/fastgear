@@ -7746,12 +7746,12 @@ var es6_array_iterator = __webpack_require__("cadf");
 // EXTERNAL MODULE: ./packages/todo/src/tribute.css
 var src_tribute = __webpack_require__("ed98");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1d6de326-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/todo/src/Tribute.vue?vue&type=template&id=b2ec971e&
-var Tributevue_type_template_id_b2ec971e_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span')}
-var Tributevue_type_template_id_b2ec971e_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"1d6de326-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./packages/todo/src/Tribute.vue?vue&type=template&id=1b9a4c29&
+var Tributevue_type_template_id_1b9a4c29_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('span')}
+var Tributevue_type_template_id_1b9a4c29_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./packages/todo/src/Tribute.vue?vue&type=template&id=b2ec971e&
+// CONCATENATED MODULE: ./packages/todo/src/Tribute.vue?vue&type=template&id=1b9a4c29&
 
 // EXTERNAL MODULE: ./node_modules/@babel/runtime-corejs2/core-js/array/is-array.js
 var is_array = __webpack_require__("a745");
@@ -8681,10 +8681,8 @@ var TributeRange_TributeRange = /*#__PURE__*/function () {
           var menuIsOffScreenHorizontally = window.innerWidth > menuDimensions.width && (menuIsOffScreen.left || menuIsOffScreen.right);
           var menuIsOffScreenVertically = window.innerHeight > menuDimensions.height && (menuIsOffScreen.top || menuIsOffScreen.bottom);
 
-          if (menuIsOffScreenHorizontally || menuIsOffScreenVertically) {
-            _this.tribute.menu.style.cssText = "display: none";
-
-            _this.positionMenuAtCaret(scrollTo);
+          if (menuIsOffScreenHorizontally || menuIsOffScreenVertically) {// this.tribute.menu.style.cssText = "display: none";
+            // this.positionMenuAtCaret(scrollTo);
           }
         }, 0);
       } else {
@@ -14296,6 +14294,7 @@ var date_panel_component = normalizeComponent(
 
 
 
+
 //
 //
 //
@@ -14784,7 +14783,7 @@ var date_panel_component = normalizeComponent(
           key: "selectItemAtIndex",
           value: function selectItemAtIndex(index, originalEvent, date, customSelection) {
             if (index === 'date') {
-              var dateNumber = new Date(date).getTime();
+              var dateNumber = new Date(date.replace(/-/g, '/')).getTime();
               content = "<span contentEditable=\"false\" class=\"fg-todo-due-date\" value=".concat(dateNumber, ">").concat(date, "</span>");
               this.replaceText(content, originalEvent, {
                 key: 'date',
@@ -14930,8 +14929,8 @@ var date_panel_component = normalizeComponent(
 
 var Tribute_component = normalizeComponent(
   src_Tributevue_type_script_lang_js_,
-  Tributevue_type_template_id_b2ec971e_render,
-  Tributevue_type_template_id_b2ec971e_staticRenderFns,
+  Tributevue_type_template_id_1b9a4c29_render,
+  Tributevue_type_template_id_1b9a4c29_staticRenderFns,
   false,
   null,
   null,
