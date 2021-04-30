@@ -12,6 +12,7 @@
   },
   "main": "./lib/date-season-range.umd.min.js",
   "dependencies": {
+    "intro.js": "^3.4.0"
   },
   "peerDependencies": {
     "vue": "^2.6.11"

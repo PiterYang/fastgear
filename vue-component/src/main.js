@@ -20,6 +20,7 @@ directiveFiles.keys().forEach(fileName => {
   Vue.directive(directiveName, directiveConfig.default || directiveConfig);
 });
 Vue.config.productionTip = false;
+Vue.prototype.ClassicEditor = window.ClassicEditor;
 new Vue({
   router,
   render: h => h(App)

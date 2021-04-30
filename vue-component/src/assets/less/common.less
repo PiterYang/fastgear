@@ -6,3 +6,59 @@ h5,
 p {
   color: #303133;
 }
+// 富文本编辑器样式修改
+.ck-editor {
+    
+  .ck-code-block-dropdown {
+      .ck-splitbutton {
+          .ck-splitbutton__arrow {
+              display: none;
+          }
+      }
+  }
+  .ck-toolbar__items {
+      height: 28px;
+      .ck-button {
+          color: #555;
+          min-height: 24px;
+          min-width: 24px;
+          .ck-button__icon {
+              width: 15px;
+              height: 15px;
+          }
+      }
+  }
+  .ck-editor__main {
+      .ck-content {
+          p {
+              margin: 0;
+              line-height: 20px;
+          }
+          ol, ul{
+              margin: 0;
+              padding-left: 20px;
+          }
+          li{
+              line-height: 20px;
+          }
+      }
+      
+  }
+  .ck-content {
+    padding-left: 0;
+    :nth-child(1) {
+        margin-top: 5px !important;
+    }
+  }
+  .ck-editor__top {
+      display: none !important;
+  }
+  ul {
+      list-style: disc;
+      margin: 14px 0;
+      padding-left: 40px;
+  }
+}
+.ck.ck-editor__main>.ck-editor__editable:not(.ck-focused){
+  border: none;
+}
