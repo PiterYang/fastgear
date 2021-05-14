@@ -103,7 +103,7 @@ export default {
                         );
                     },
                     requireLeadingSpace: true,
-                    // menuShowMinLength: 1,
+                    menuShowMinLength: 1,
                     noMatchTemplate: null
                 },
 
@@ -126,8 +126,8 @@ export default {
                         return '@' + item.original.value;
                     },
                     requireLeadingSpace: true,
-                    noMatchTemplate: null
-                    //  menuShowMinLength: 1,
+                    noMatchTemplate: null,
+                     
                 },
                 {
                     trigger: '@',
@@ -178,7 +178,8 @@ export default {
                         );
                     },
                     requireLeadingSpace: true,
-                    noMatchTemplate: null
+                    noMatchTemplate: null,
+                    menuShowMinLength: 1,
                     // autocompleteMode: true
                 }
             ],

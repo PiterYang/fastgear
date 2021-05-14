@@ -244,7 +244,7 @@ class TributeEvents {
         }
       }
     }
-
+    
     if (
       instance.tribute.current.mentionText.length <
       instance.tribute.current.collection.menuShowMinLength
