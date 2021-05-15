@@ -244,7 +244,7 @@ class TributeEvents {
         }
       }
     }
-    
+    console.log('length', instance.tribute.current.mentionText.length)
     if (
       instance.tribute.current.mentionText.length <
       instance.tribute.current.collection.menuShowMinLength

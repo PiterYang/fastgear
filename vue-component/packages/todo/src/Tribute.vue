@@ -313,7 +313,9 @@ export default {
                     ) {
                         return;
                     }
-
+                    if(fromActiveLink && ['@', '@@'].includes(this.current.collection.trigger)){
+                        return
+                    }
                     this.currentMentionTextSnapshot = this.current.mentionText;
 
                     // create the menu if it doesn't exist.
