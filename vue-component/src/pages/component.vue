@@ -42,9 +42,6 @@ export default {
             defaultActive: ''
         };
     },
-    mounted() {
-        console.log('this.$route', this.$route);
-    },
     methods: {
         handleOpen(key, keyPath) {
             console.log(key, keyPath);

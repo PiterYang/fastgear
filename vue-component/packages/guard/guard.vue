@@ -23,7 +23,6 @@ export default {
     },
     methods: {
         showGuard(){
-            console.log(111)
             let options = {
                 showProgress: false,
                 showBullets: false,
@@ -46,7 +45,6 @@ export default {
             if(this.doneLabel){
                 options.doneLabel = this.doneLabel
             }
-            console.log('options', options)
             setTimeout(() => {
                 intro().setOptions(options).start().oncomplete(() => {
                     this.handleDoneClick && this.handleDoneClick()

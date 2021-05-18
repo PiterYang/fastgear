@@ -54,7 +54,6 @@ export default {
     //     }
     // },
     mounted(){
-        console.log(1112312)
         setTimeout(() => {
             this.ClassicEditor.create(document.querySelector('#editor'), {
                 ...CK_EDITOR_CONDIG
