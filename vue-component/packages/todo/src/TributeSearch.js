@@ -148,8 +148,9 @@ class TributeSearch {
         }
 
         let rendered = this.match(pattern, str, opts);
-
-        if (rendered != null) {
+        // 增加只有连续字符串匹配才能匹配
+        let flag = str.toLowerCase().includes(pattern.toLowerCase())
+        if (rendered != null && flag) {
           prev[prev.length] = {
             string: rendered.rendered,
             score: rendered.score,

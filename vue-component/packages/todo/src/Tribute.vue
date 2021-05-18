@@ -313,9 +313,9 @@ export default {
                     ) {
                         return;
                     }
-                    if(fromActiveLink && ['@', '@@'].includes(this.current.collection.trigger)){
-                        return
-                    }
+                    // if(fromActiveLink && ['@', '@@'].includes(this.current.collection.trigger)){
+                    //     return
+                    // }
                     this.currentMentionTextSnapshot = this.current.mentionText;
 
                     // create the menu if it doesn't exist.
@@ -342,8 +342,8 @@ export default {
                         if (!this.isActive) {
                             return;
                         }
-
-                        let items = this.search.filter(this.current.mentionText, values, {
+                        const str = fromActiveLink ? '' : this.current.mentionText
+                        let items = this.search.filter(str, values, {
                             pre: this.current.collection.searchOpts.pre || '<span>',
                             post: this.current.collection.searchOpts.post || '</span>',
                             skip: this.current.collection.searchOpts.skip,
@@ -362,7 +362,6 @@ export default {
                                 }
                             }
                         });
-
                         if (this.current.collection.menuItemLimit) {
                             items = items.slice(0, this.current.collection.menuItemLimit);
                         }

@@ -103,7 +103,7 @@ export default {
                         );
                     },
                     requireLeadingSpace: true,
-                    menuShowMinLength: 1,
+                    menuShowMinLength: 0,
                     noMatchTemplate: null
                 },
 
@@ -179,7 +179,7 @@ export default {
                     },
                     requireLeadingSpace: true,
                     noMatchTemplate: null,
-                    menuShowMinLength: 1,
+                    menuShowMinLength: 0,
                     // autocompleteMode: true
                 }
             ],

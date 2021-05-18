@@ -30,6 +30,24 @@ export default {
                     uid: 'uid2'
                 },
                 {
+                    key: 'tao.yang',
+                    value: 'tao.yang1',
+                    uname: 'chianes tao.yang1',
+                    uid: 'tao.yang1'
+                },
+                {
+                    key: 'tao.yang',
+                    value: 'tao.yang2',
+                    uname: 'chianes tao.yang2',
+                    uid: 'tao.yang2'
+                },
+                {
+                    key: 'tianqi.zhao',
+                    value: 'tao.yang1',
+                    uname: 'chianes tao.yang1',
+                    uid: 'tao.yang1'
+                },
+                {
                     key: 'userKey3', // 选项的key，搜索项
                     value: 'value3', // 选项的英文名
                     uname: 'chianes name3', // 选项的中文名
