@@ -47,6 +47,22 @@ const myRoutes = [
               import(
                 /* webpackChunkName: "season" */ "../pages/components/guard"
               )
+          },
+          {
+            path: "rich_text_editor",
+            name: "rich_text_editor",
+            component: () =>
+              import(
+                /* webpackChunkName: "season" */ "../pages/components/rich_text_editor"
+              )
+          },
+          {
+            path: "feedback",
+            name: "feedback",
+            component: () =>
+              import(
+                /* webpackChunkName: "season" */ "../pages/components/feedback"
+              )
           }
         ]
       },

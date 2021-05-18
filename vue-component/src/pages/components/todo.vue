@@ -7,12 +7,11 @@
             <fg-todo ref="todoEditor" :values="values" :todoItem="todoItem"></fg-todo>
         </div>
         <div class="code-block">
-            <textarea name="todo" id="todo" style="border:none; visibility: hidden;"></textarea>
+            <fg-editor v-model="codeContent" isReadOnly />
         </div>
     </div>
 </template>
 <script>
-import {CK_EDITOR_CONDIG} from '../../config';
 export default {
     name: 'App',
     data() {
@@ -46,22 +45,8 @@ export default {
                     dueDate: [], // 截止日期
                     content: '' // todo 内容
                 }
-            ]
-        };
-    },
-    methods: {
-        handleGetData() {
-            console.log('data', this.$refs['todoEditor'].getData());
-        }
-    },
-    mounted(){
-        setTimeout(() => {
-            this.ClassicEditor.create(document.querySelector('#todo'), {
-                ...CK_EDITOR_CONDIG
-            })
-                .then(editor => {
-                    editor.isReadOnly = true;
-                    editor.setData(`<pre><code>&lt;fg-todo
+            ],
+            codeContent: `<pre><code>&lt;fg-todo
     ref="todos"
     :values="todoValues"
     :containerClass="you scroll container class"
@@ -105,13 +90,13 @@ exprot default {
         }
     }
     
-}</code></pre>`);
-                    window.editor2 = editor;
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        });
+}</code></pre>`
+        };
+    },
+    methods: {
+        handleGetData() {
+            console.log('data', this.$refs['todoEditor'].getData());
+        }
     }
 };
 </script>
