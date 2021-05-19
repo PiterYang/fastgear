@@ -44,13 +44,13 @@
                 <div class="sociate">
                     <div class="title">社区</div>
                     <div class="a-wrap">
-                        <a href target="_blank">反馈建议</a>
+                        <a href="https://github.com/PiterYang/fastgear/issues" target="_blank">反馈建议</a>
                     </div>
                     <div class="a-wrap">
                         <a href="https://github.com/PiterYang/fastgear/issues" target="_blank">贡献指南</a>
                     </div>
                     <div class="a-wrap">
-                        <a href target="_blank">掘金论坛</a>
+                        <a  target="_blank" href="https://juejin.cn/post/6943123272242298910">掘金论坛</a>
                     </div>
                     <div class="device">组件设计交互的解释权归fastgear团队所有</div>
                 </div>
